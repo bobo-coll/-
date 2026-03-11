@@ -1,0 +1,2031 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<title>築夢點滴</title>
+<meta name="application-name" content="築夢點滴">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="築夢點滴">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#1a1a2e">
+<meta name="description" content="個人行事曆 beta.0 by 柏宏">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAIAAADdvvtQAAAEHElEQVR4nO3dMY4TMRiG4QVxCug4ABR7/yNQcAE67kERKYqyIvHu5/H4//U83YrCGecdJ5kJzqevX3+8wEd9PvsBUJuAiAiIiICICIiIgIgIiIiAiAiIiICICIiIgIgIiIiAiAiIiICICIiIgIgIiIiAiAiIiICICIiIgIgIiIiAiHw5+wG829+/v2///Pbt51mPZIrqh/Op0P+Nv5vrW+Xm/aXL4ZR5CXsw3U//dUNtDqdGQCMTWmjSOx1OjYDYVoGAxs/FEmdts8MpEBA7ExARAREREJECAY1fVStx/a3Z4RQIiJ3VCGjkXCxxvl50OpwaAb08m9Aq033V5nAq3Uy9qH77+k71w6kXEFsp8xLGngREREBEBEREQEQERERARAREREBEBEREQEQERERARAREREBEBEREQEQERERARAREREBEBEREQEQERERARAREREBEBEREQEQERERARAREREBEBERkzi8WlvhZEN7Kt2S0AhEREBEBEREQEQERERCROR/jP+DuA+ShFwJ+/fpz++fr63djzTLnpw7e9fQ/uPYwPaO7Kb41fborjlXvOtDKX6l5MMtP/9VYg5YGtPJ3skbmcdZcdx1rhDfRRNYFtPK3QsdPwfxk7TrWICsQEQERERARARFZF9D4RcL8cuL4xbT8El/XsQZZgYgsDWhkaZl1N2PkFJx1mnYda8TqFehxH3PvhT2ex7mz3HWsp064mXrhbvwOY+XXbE8LiB3UuxtPMwIiIiAiAiIiICICIiIgIgIiIiAiAiIiICICIiIgIgIiIiAip23vUuuLV8b6nxO+UFZxG5SuY9X7QlnXbVC6jvXU0oC6boPSdawR3kQTWRdQ121Quo41yApEREBEBEREQETWBdR1G5SuYw2yAhFZGlDXbVC6jjVi9QrUdRuUrmM9ddruHF3vWtcay/YuROrdjacZAREREBEBEREQEQERERARAREREBEBEZkT0Nyf62aNKc+aFYiIgIgIiMi0gLwNqmXW82V7F2NF5nyh7GLwa2UVt0HpN9asFWjme6CRx9R1G5RaY018v2F7F2NFfAojMjmgB2tj121Qyo019/Py/BXI5/mdTX92vIQROSQgi9CejnhejlqBNLSbg54R27sYK3JgQBahfRz3XBy7At097q7boGw+1qFn8uEvYe9qqO42KNuOdfTrwMybqQ+8vc/a9a71VmMteBexKKAXW8Ast+Y96LpPYd5Tr7RsttetQFeWokMtPlFPuJVhKTrO+rk9YQW6shRNdNZpeebNVEvRLCfO5Jkr0C2r0QfscAbuEtCVkp7aoZur7QK6JaarraK5tXVA7M83EokIiIiAiAiIiICICIiIgIgIiIiAiAiIiICICIiIgIgIiIiAiAiIiICICIiIgIgIiIiAiPwDF1O6D1VSXV4AAAAASUVORK5CYII=">
+<link rel="manifest" href="data:application/manifest+json;charset=utf-8,%7B%0A%20%20%22name%22%3A%20%22%E7%AF%89%E5%A4%A2%E9%BB%9E%E6%BB%B4%22%2C%0A%20%20%22short_name%22%3A%20%22%E7%AF%89%E5%A4%A2%E9%BB%9E%E6%BB%B4%22%2C%0A%20%20%22description%22%3A%20%22%E5%80%8B%E4%BA%BA%E8%A1%8C%E4%BA%8B%E6%9B%86%20beta.0%20by%20%E6%9F%8F%E5%AE%8F%22%2C%0A%20%20%22start_url%22%3A%20%22./%22%2C%0A%20%20%22display%22%3A%20%22standalone%22%2C%0A%20%20%22orientation%22%3A%20%22portrait%22%2C%0A%20%20%22background_color%22%3A%20%22%231a1a2e%22%2C%0A%20%20%22theme_color%22%3A%20%22%231a1a2e%22%2C%0A%20%20%22lang%22%3A%20%22zh-TW%22%2C%0A%20%20%22icons%22%3A%20%5B%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22src%22%3A%20%22data%3Aimage/png%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAAEgAAABICAIAAADajyQQAAABLElEQVR4nO2aOxLCIBRFieMqks4FaJH9LyGFG7DLPiyYIUyUnwiPC/dUFMhwgOdcMkzzfFc9cpGeQCkohgbF0KAYGhRD45o/xL4/dWNZHu0MlbtjZiqntuxQquOjSDEHdjFkFsYfh1JKTby2gEExNCiGBsXQoBgaFEODYmg4Pw3k32Gr8fWOM96OfWIWJriZ2/bSjXW91e%2Bpid2x%2BOutmcGpXaenodujOLxY/Ec/uwb89VCip8H5MYd/941CMTQohgbF0EgIwbLRtlQIlo22DMEHw4vJRluG4IPhjyIcFEODYmg4xfLfxtTBNc8hQ7C9GG2GYM%2BxGq/GNC1Xmn9u4R3Tv28tBAdXPPZZX1OZOOYcpb1XFNeLL41fHmKK6KVWO1%2BYokExNCiGRrdib3T5lsvpVJPPAAAAAElFTkSuQmCC%22%2C%0A%20%20%20%20%20%20%22sizes%22%3A%20%2272x72%22%2C%0A%20%20%20%20%20%20%22type%22%3A%20%22image/png%22%0A%20%20%20%20%7D%2C%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22src%22%3A%20%22data%3Aimage/png%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAIAAABt%2BuBvAAAB6UlEQVR4nO2csW3DMBBF4yBT2F0GSArvP4KLLJDOe6QQIAiirUedROocvFepoXl%2BoU7Cp8PT%2Bfz1Js95P7qA7CgIUBCgIEBBgIIABQEKAhQEKAhQEKAg4KPR597vP8PF5fLdaIo%2BEzVZQWPRs%2BtXnGh/QWWhjUrvM5E9CFAQsL%2Bgslk2ap99JmqygqaFNn2KdZjoZCa9jD0IUBCgIEBBgIIABQEKAhQEKAhQEKAgQEGAggAFAQoCFAQoCOCNw6YbWxlYzmpdQYCCgPje/LgyV92Dt9vvcHG9fuYcNSO4gmL7LWPFs%2Bs8o0oigmI7dmWVNXX3HPUQexCgICAiKPa7k7JT1vTOnqMeElxBsV8uTausr7jnqBLem/dNWpZQEKAgQEGAggAFAQoCFAQoCIgHZvmjryMDs/zR15GBWf7oy8CsHwoCIoLyR1/HB2b5oy8Ds90wMNuEggAFAQoCFAQoCFAQwIJaH75xLPjtXEFA7b%2BFl%2B/T%2BaMvHFVzcxiYAbWCprLzR181oyp7qz0IWCHoPz3O6r/LuhU0fG7%2B6Gt51Kq/9OpbrHSUM/p6NmrtfRA8/eVFU7RAl9h0PM4LaQo30B3OD0quaeOzZbcDlhJq2uWx6wlUgC%2BKgIIABQEKAhQEKAhQEKAgQEHAH0Y48oUt72K%2BAAAAAElFTkSuQmCC%22%2C%0A%20%20%20%20%20%20%22sizes%22%3A%20%2296x96%22%2C%0A%20%20%20%20%20%20%22type%22%3A%20%22image/png%22%0A%20%20%20%20%7D%2C%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22src%22%3A%20%22data%3Aimage/png%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAAIAAAACACAIAAABMXPacAAACr0lEQVR4nO2dOXLCQBAAjcuvgMwPsAP%2B/wQCf8AZ/3DgKkoF2i0do%2BkRdGcQDDtq9pBGKx2Ox6834XinG/DqKABGATAKgFEAjAJgFACjABgFwCgARgEwCoBRAIwCYBQAowCYj/yfvF5/hh9Pp%2B/8NtzAG5PdA%2B4SHv0mjQqNSRXQSg9xUKQxeQL6iSWnXacxTsIwCoBRAIwCYPIE9JfYyQvwOo1J7QGtxJBzsSKNyR6CHtMDz4QrNObgvaEsTsIwCoBRAIwCYBQAowAYBcAoAEYBMAqAUQCMAmAUAKMAGAXAKABGATAKgFEAjAJgFACjAJh5O2TAzRT7Yvr9RfYAGAXAKAAmcpfk3cC3eMK4XH6HH8/nz%2BeIM0pYD4i60fUu29Fv9hinRYyAqFu9W7nNzblanA4BAqI2O/Szmp5ztTh9nIRhFACjABgFwAQIiNr2319fT199V4vTJ6YHRD34opXV3GyrxekQNgRFPfrlMbdl2VaL02LeLkkvR0/Ey9G7QQEwCoBRAIwCYBQAowAYBcAoACayKF%2BtCF4tzihhPaBaEbxanBYxAqoVwavF6RAgoFoRvFqcPk7CMAqAUQCMAmACBFQrgleL0yemB1QrgleL0yFsCKpWBK8Wp4VF%2BU2wKL8bFACjABgFwCgARgEwCoCZJ4B98%2BlemHWU7AEwFuXz4oxiUT4pTovZAkYHuGpFcDDO3GnSovzmcfosEeBaqMWCI%2BMqCGahADvBI8uOyfIeoIMhi4/GqiHo/1erFcHz46z5L1qUz4jTYa2Am/xqRfC0OCuH4rD3Cb9gvT5kFtzwoX3PTVS%2BkecBr%2BMgMNNNXmn%2BxMNR%2BJ9sw3fKP5mGjfr3hgKG7FRGwqCaJEBaeDEORgEwCoBRAIwCYBQAowAYBcAoAEYBMAqAUQCMAmD%2BAOWmRp1JNqiuAAAAAElFTkSuQmCC%22%2C%0A%20%20%20%20%20%20%22sizes%22%3A%20%22128x128%22%2C%0A%20%20%20%20%20%20%22type%22%3A%20%22image/png%22%0A%20%20%20%20%7D%2C%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22src%22%3A%20%22data%3Aimage/png%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAAJAAAACQCAIAAABoJHXvAAADCElEQVR4nO3dQVLjMBBAUUNxCthxgJkF9z8Ci7nA7LjHLFKVSplIjOWWu7/z3w4WKkc/cpygmKfX11%2BLOJ6zD0DbGAzGYDAGgzEYjMFgDAZjMBiDwRgMxmAwBoMxGIzBYAwGYzAYg8EYDMZgMC/ZB7Asy/L19ef2x7e331lHslLwwPJX2GpS7v4mRc0DSw7WmoL0qSl7YJnB%2Bg8%2BcWrKHtiSvsK0lcFgDAZjMJjMYP23NYlvesoe2JK%2BwloPPv0tatkDyz8lfp%2BC9Em5qHlgT37diCV/hWkTg8EYDMZgMAaDMRiMwWAMBmMwGIPBGAzGYDAGgzEYjMFgDAZjMBiDwRgMxmAwBoMxGIzBYAwGYzAYg8GM3EUg/Xu%2BZ7J1v74rDMZgMAaDMRjMrFsXrV5L91%2BnfH7%2Bvf3x4%2BP99APeNWWFhX93cTUXd39zsgFb4oOFfzu49ciHZ6T%2BgB3BwcK/f99/zAMzUn/APi86YAwGYzAYg8EEBwu/02D/3czAe536A/bFr7Dwe3m2HvPwXNQfsGPKKTH8brnfH/nOuag/YMvIrYv8e1gg/x52cgaDMRiMwWAMBmMwGIPBGAzGYDAGgzEYjMFgZu1LrL/rr/6Ad01ZYfV3/dUfsCU%2BWP1df/UH7AgOVn/XX/0B%2B7zogDEYjMFgDAYTHKz%2Brr/6A/bFr7D6u/7qD9gx5ZRYf9df/QFb3JeYzH2JJ2cwGIPBGAzGYDAGgzEYjMFgRoLtvA%2BRrgZm0hUGYzAYg8GMfPh70f8IuP6uv/QBxy4F3JdYdMCW8WCtJ0j9XX8VBhy%2B0nZfYrkB%2B3YF8w3ZmD3z5lUizN5gLrKtds5YwAqz2f/bP1cxp8TrcdTf9Zc4YMgzO%2Bw17MdmdXb9pQwYdR6KvOjoNKu26%2B/gAQNfNcY/mmpx1%2BJK7Gv8cf8Z4jGFz0b8Crt68KU26Yk7MdjFA2abeo6ZHuziQbId8HJwULBbJ4t38Gt2QjDt4Ye/MAaDMRiMwWAMBmMwGIPBGAzGYDAGgzEYjMFgDAZjMBiDwfwDC/ZNfecpHSUAAAAASUVORK5CYII%3D%22%2C%0A%20%20%20%20%20%20%22sizes%22%3A%20%22144x144%22%2C%0A%20%20%20%20%20%20%22type%22%3A%20%22image/png%22%0A%20%20%20%20%7D%2C%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22src%22%3A%20%22data%3Aimage/png%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAAJgAAACYCAIAAACXoLd2AAADYklEQVR4nO2dMXLbMBBF5UxOYXc5QFL4/kdwkQuk8z1SaEbRKCIIE1hh9%2Bm9Ti524P%2B8JKFZwi%2Bvrz9PUp9vqxcgc1AkBEVCUCQERUJQJARFQlAkBEVCUCQERUJQJARFQlAkBEVCUCQERUJQJARFQlAkhO%2BrF/CPz8/f1x/f3n6tWkmDtIvM0pE3Ad39yXIyLzKFyK048sR0Sr/I9SLbQSSJKf8iF4vsiWB5TCUWub4jZQqKhKBICIqEsFhkz4Z6%2Baa7xCLXd2Q7guUBncm/yPUiT9tBZAjoQvJFphB5uhdHkoCuybzIF99YZpClI2UQRUJQJARFQlAkBEVCUCQERUJQJARFQlAkBEVCUCQERUJQJARFQlAkBEVCUCQERUJQJARFQlAkBEVCUCQERUI4eM7O8lfm2Rx4pcSOhKBICIqEoEgIsYcK3ty0pzwifXz8uf74/v7jeWo2COzIiPd7b9K5%2BxNqzTZRIiPeuN/KYiSjKjV3CREZcQZGO4VjGVWp2cN8kRGn0vT8/l/NqErNTnxqhaBICIqEoEgI80VGnDfcs5v%2B6o67Ss1OQjoy4gTw9u9/LJ0qNXuIurRGnMm/lcJIOlVq7hJ4j4z4Lxn/ZzGeTpWabQ4eKuiEQChOCDwvioSgSAiKhKBICIqEoEgIioSgSAiKhKBICLEDylUGf6vUbBDYkVUGf6vUbBMlssrgb5Wau4SIrDL4W6VmD/NFVhn8rVKzE59aISgSgiIhKBLCfJFVBn%2Br1OwkpCOrDP5WqdlD1KW1yuBvlZq7BN4jqwz%2BVqnZxgHljDig/LwoEoIiISgSgiIhKBKCIiEoEsJBkePnPMoWx7K1IyEoEsLB71rP7H7jWmXwN0/Nw/csB5TL1GzjgHKNmrsMidy6DlQZ/M1Wc2Qv4IBy9pqdjIp0QzmLwSQndKQuxxnP0H0khDkibcoRpqQ3rSMvq6ky%2BJuk5qwemHlp7XSZZ/B3ec2JV7LJ98hdl9kGfxfWnHs/mv%2Bw03CZc/B3Sc3pTxVDX5o3cIK5QcSzYZTIM%2Bq8Ie7xPnYf6bbkmtA0YjvywpO35gP%2BoB8k8sJTGX3kBenRIi%2BAjS65oSwTKXPxS3MIioSgSAiKhKBICIqEoEgIioSgSAiKhKBICIqEoEgIioSgSAiKhPAXAXGiV6gGSJgAAAAASUVORK5CYII%3D%22%2C%0A%20%20%20%20%20%20%22sizes%22%3A%20%22152x152%22%2C%0A%20%20%20%20%20%20%22type%22%3A%20%22image/png%22%0A%20%20%20%20%7D%2C%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22src%22%3A%20%22data%3Aimage/png%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAAMAAAADACAIAAADdvvtQAAAEHElEQVR4nO3dMY4TMRiG4QVxCug4ABR7/yNQcAE67kERKYqyIvHu5/H4//U83YrCGecdJ5kJzqevX3%2B8wEd9PvsBUJuAiAiIiICICIiIgIgIiIiAiAiIiICICIiIgIgIiIiAiAiIiICICIiIgIgIiIiAiAiIiICICIiIgIgIiIiAiHw5%2BwG829%2B/v2///Pbt51mPZIrqh/Op0P%2BNv5vrW%2BXm/aXL4ZR5CXsw3U//dUNtDqdGQCMTWmjSOx1OjYDYVoGAxs/FEmdts8MpEBA7ExARAREREJECAY1fVStx/a3Z4RQIiJ3VCGjkXCxxvl50OpwaAb08m9Aq033V5nAq3Uy9qH77%2Bk71w6kXEFsp8xLGngREREBEBEREQEQERERARAREREBEBEREQEQERERARAREREBEBEREQEQERERARAREREBEBEREQEQERERARAREREBEBEREQEQERERARAREREBEBERkzi8WlvhZEN7Kt2S0AhEREBEBEREQEQERERCROR/jP%2BDuA%2BShFwJ%2B/fpz%2B%2Bfr63djzTLnpw7e9fQ/uPYwPaO7Kb41fborjlXvOtDKX6l5MMtP/9VYg5YGtPJ3skbmcdZcdx1rhDfRRNYFtPK3QsdPwfxk7TrWICsQEQERERARARFZF9D4RcL8cuL4xbT8El/XsQZZgYgsDWhkaZl1N2PkFJx1mnYda8TqFehxH3PvhT2ex7mz3HWsp064mXrhbvwOY%2BXXbE8LiB3UuxtPMwIiIiAiAiIiICICIiIgIgIiIiAiAiIiICICIiIgIgIiIiAip23vUuuLV8b6nxO%2BUFZxG5SuY9X7QlnXbVC6jvXU0oC6boPSdawR3kQTWRdQ121Quo41yApEREBEBEREQETWBdR1G5SuYw2yAhFZGlDXbVC6jjVi9QrUdRuUrmM9ddruHF3vWtcay/YuROrdjacZAREREBEBEREQEQERERARAREREBEBEZkT0Nyf62aNKc%2BaFYiIgIgIiMi0gLwNqmXW82V7F2NF5nyh7GLwa2UVt0HpN9asFWjme6CRx9R1G5RaY018v2F7F2NFfAojMjmgB2tj121Qyo019/Py/BXI5/mdTX92vIQROSQgi9CejnhejlqBNLSbg54R27sYK3JgQBahfRz3XBy7At097q7boGw%2B1qFn8uEvYe9qqO42KNuOdfTrwMybqQ%2B8vc/a9a71VmMteBexKKAXW8Ast%2BY96LpPYd5Tr7RsttetQFeWokMtPlFPuJVhKTrO%2Brk9YQW6shRNdNZpeebNVEvRLCfO5Jkr0C2r0QfscAbuEtCVkp7aoZur7QK6JaarraK5tXVA7M83EokIiIiAiAiIiICICIiIgIgIiIiAiAiIiICICIiIgIgIiIiAiAiIiICICIiIgIgIiIiAiPwDF1O6D1VSXV4AAAAASUVORK5CYII%3D%22%2C%0A%20%20%20%20%20%20%22sizes%22%3A%20%22192x192%22%2C%0A%20%20%20%20%20%20%22type%22%3A%20%22image/png%22%0A%20%20%20%20%7D%2C%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22src%22%3A%20%22data%3Aimage/png%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAAYAAAAGACAIAAAArpSLoAAAKuUlEQVR4nO3dQVIbSRCG0faETwE7H8BecP8jsPAFvOMes9AEQyBhY3VV/1nZ7y2JULmTKn1qETPSl4eH7xtAwj/pCwDOS4CAGAECYgQIiBEgIEaAgBgBAmIECIgRICBGgIAYAQJiBAiIESAgRoCAGAECYgQIiBEgIEaAgBgBAmIECIgRICBGgIAYAQJiBAiIESAgRoCAGAECYgQIiBEgIEaAgBgBAmIECIgRICBGgIAYAQJiBAiIESAgRoCAGAECYgQIiBEgIEaAgBgBAmIECIgRICBGgIAYAQJiBAiIESAgRoCAGAECYgQIiBEgIOZr%2BgJO4eXl5/UPHx9/HH8l3GSDUr48PHxPX0NbN4/1NQc9xQbFCdAUnzzZbznlR7JBRfgb0Hh3HO67H8UdbFAdAjTYnmPqiB/ABpUiQCPtP6CO%2BFQ2qBoBGmbU0XTEJ7FBBQnQGGMPpSM%2BnA2qSYCAGAEaYMbrodfYgWxQWQIExAgQECNAe827FXeTP4QNqkyAgBgBAmIECIgRICBGgIAYAQJiBGiveZ9T5ROwhrBBlQkQECNAQIwADTDjVtzt/UA2qCwBAmIEaIyxr4deXYezQTUJ0DCjDqXDPYkNKkiARtp/NB3uqWxQNQI02J4D6nAfwAaVIkDj3XdMHe7D2KA6fDXzRL56vDgbFCdAR7h50B3rOmxQigABMf4GBMQIEBAjQECMAAExAgTECBAQI0BAjAABMQIExAgQECNAQIwAATECBMQIEBAjQECMAAExAgTECBAQI0BAjAABMQIExAgQECNAQIwAATECBMQIEBAjQECMAAExAgTECBAQI0BAjAABMQIExAgQECNAQIwAATECBMQIEBAjQECMAAExAgTECBAQI0BAjAABMQIExAgQECNAQIwAATECBMQIEBAjQECMAAExAgTECBAQI0BAjAABMQIExAgQECNAQIwAATECBMQIEBAjQECMAAExAgTECBAQI0BAjAABMV/TF/C/l5ef6UuAs3h8/JG%2BhG1zBwQECRAQI0BAjAABMQIExAgQECNAQIwAATECBMQIEBAjQECMAAExAgTEFPq/4Q9z8/8DbvD/4j8//7r%2B4dPTt%2BOvZCxzNfbl4eF7%2Bhr%2BMzsBn/z8geVKdPMcX1vuZJtr6mUU%2BTiOUwTojt/1Ehn65FF%2Ba4mnq7lezZurSID6/w3ovl90ke35jTtO892POpK59j9qIc0DtKcjlRu051xWPtPmGvvY%2BjoHaH9BajZo/4mseabNNW%2BFstoGaFQ7qjVo1FmsdqbNdcw61fQM0Nhq1GnQ2FNY50yb6/jViugZIGAJDQM044alwk3QjBfACi%2Bq5squmdUwQMAqBAiI6Ragee%2BVsu/C5t17Z%2B/qzVVn5YhuAQIWIkBAjAABMQIExAgQECNAQEy3AM37ILHsR5TN%2B2Cq7Ed5mavOyhHdAgQsRICAmIYBmvFeqcJHRM%2B4965wP2%2Bu7JpZDQMErKJngMbesFS4/bkY%2BwJY5%2BXUXMevVkTPAG3jqlGnPhejTmG102yuY9appm2AthHtqFafi/1nseZpNte8FcrqHKBtX0Fq1udiz4msfJrNNfax9TUP0HZvRyrX5%2BK%2Bc1n/NJtr/6MWcoqvZr7w3fCzr2Qsc029jAofc76dKkCvbv7ql%2BvOtZsne7nn5zVzzSBA7zVIAKyiSID6/w0IKEuAgBgBAmIECIgRICBGgIAYAQJiBAiIESAgRoCAGAECYgQIiBEgIEaAgBgBAmIECIgRICBGgIAYAQJiBAiIESAgRoCAGAECYgQIiBEgIEaAgBgBAmIECIgRICBGgICYr%2BkLCHh%2B/nX9w6enb8dfyVjmWkvXuf7Kl4eH7%2Blr%2BM/Ly8%2Bp69/c72vLnQBzzb6SsYrM9fj4Y%2Br6n3SKAH1yy99a4lib65W5/laRAPX/G9Adu373o45krv2POlLXuXZqHqA9%2B1d578019rGzdZ1rv84B2r9zNffeXPNWmKHrXEO0DdCoPau29%2BY6Zp1Rus41Ss8Ajd2tOntvruNX26PrXAP1DBCwhIYBmvFCUeHFx1zZNStcQ4W5xmoYIGAVAgTEdAvQvHvU7N2vueqsnP3Xm70L6xYgYCECBMQIEBAjQECMAAExAgTEdAvQvA9wyn7klbnqrJz915f46LXP6xYgYCECBMQ0DNCMe9QK973myq5Z4RoqzDVWwwABq%2BgZoLEvFHVedsx1/Gp7dJ1roJ4B2sbtVrVdN9cx64zSda5R2gZoG7FnNXfdXPNWmKHrXEN0DtC2b%2Bcq77q5xj52tq5z7dc8QNu9%2B1d/1821/1FH6jrXTqf4auaLIt/JPZy5Zl/JWEXmKvLVzCcK0KubJ2C5c3zNXGvJziVA7x0WIKBIgPr/DQgoS4CAGAECYgQIiBEgIEaAgBgBAmIECIgRICBGgIAYAQJiBAiIESAgRoCAGAECYgQIiCkUoCKfkATt1XmuFQoQcDYCBMQIEBAjQECMAAExtQJU54/z0FWpZ1mtAAGnIkBAjAABMeUCVOoNKjRT7flVLkDAeQgQEFMxQNXuEqGHgs%2Bsr%2BkLCHh%2B/nX9w6enb8dfyVjmWkvXuf7Kl4eH7%2BlruOHl5efwNW/u97XlToC5Zl/JWMG5Ct4BFQ3QNrRBn9zyt5Y41uZ6Za4/KlifrebfgMa6Y9fvftSRzLX/UUfqOtdOdQM0JNh79q/y3ptr7GNni89V8/Znqxyg/fbvXM0zba55K8zQda4h2gZo1J5V23tzHbPOKF3nGqV0gO6%2Bbxy7W3X23lzHr7ZHkbnKvv/aigcI6K16gO6I94wXwAovqubKrlnhGu5Ys/Ltz1Y/QEBjCwSoeMKhrPrPnQUCtP3N73HevXf2rt5cdVbO/uufX7l%2BfbZVAgS0tEyAlsg5FLHK82WZAAH9rBSgVaIOWQs9U1YK0LbUbxYi1nqOLBagbbXfLxxpuWfHegH6vXkfTJX9yCtz1Vk5%2B68v8dFrn7dkgJbLPBxgxefFkgHa1vxdwzyLPiNWDdD28W98xj1qhftec2XXrHANH625aH22pQO0rfx7h1GWfhasHaCPjH3xqfByemGu41fbo%2BtcAy0foNlvxKrturmOWWeU2XMtffuzNQjQNrNB1U7zhbnmrTDDvLlWr8/WI0DbnAbVPM0X5hr72NlmzNWgPlubAG2jG1T5NF%2BYa/%2BjjjR2rh712Sp/NfPdPvpOZ981PvtKxjLXzZ%2B3Sc9FwwBtf/pe%2BZsnYLlzfM1ca7ljrmb12boGaPtTg2A5/eqzdfob0Dstd4vT6nqe294BvXIrxNK6puei7R3Qq977R2/tT2//AG0n2EVaOsO57f8W7C1vx1jCGdJzca4AXcgQZZ0nPReneAv2ztn2mFWc8GSe8Q7olVshijhhei5OHaALGSLotOm5EKD/KRGHOXl3XgnQezLEVNLzlgB9SIkYSHduEqA/UyLupju/J0B/R4z4I9H5PAHaS5JOTm72ECAg5oz/JTRQhAABMQIExAgQECNAQIwAATECBMQIEBAjQECMAAExAgTECBAQI0BAjAABMQIExAgQECNAQIwAATECBMQIEBAjQECMAAExAgTECBAQI0BAjAABMQIExAgQECNAQIwAATECBMQIEBAjQECMAAExAgTECBAQI0BAjAABMQIExAgQECNAQIwAATECBMQIEBDzL1FmknPPld2DAAAAAElFTkSuQmCC%22%2C%0A%20%20%20%20%20%20%22sizes%22%3A%20%22384x384%22%2C%0A%20%20%20%20%20%20%22type%22%3A%20%22image/png%22%0A%20%20%20%20%7D%2C%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22src%22%3A%20%22data%3Aimage/png%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAIAAAB7GkOtAAAOtUlEQVR4nO3dQVIbPxrGYTOVU5hdDgAL7n8EFlwgO99jFq7KeAJ8djfdUkvv82wzCV2fJf3U8K/h6Xx%2BOQGQ5z%2B9HwCAPgQAIJQAAIQSAIBQAgAQSgAAQgkAQCgBAAglAAChBAAglAAAhBIAgFACABBKAABCCQBAKAEACCUAAKEEACCUAACEEgCAUAIAEEoAAEIJAEAoAQAIJQAAoQQAIJQAAIQSAIBQAgAQSgAAQgkAQCgBAAglAAChBAAglAAAhBIAgFACABBKAABCCQBAKAEACCUAAKEEACCUAACEEgCAUAIAEEoAAEIJAEAoAQAIJQAAoQQAIJQAAIQSAIBQAgAQSgAAQgkAQCgBAAglAAChBAAglAAAhBIAgFACABBKAABCCQBAKAEACCUAAKEEACCUAACEEgCAUAIAEEoAAEL96v0A7Ohy%2Bfjuj56fX1s%2BCQdnqWR6Op9fej8DGys282e2dzJLJZwATGXRfr5lb6exVDgJwDRW7%2Bdb9nYCS4W//BB4Bpts6Q3/HQ7LUuGWAAxv261oY0/MUuEfAjC2PTahjT0lS4XPBGBg%2B20/G3sylgpfEoBR7b3xbOxpWCp8RwCG1GbL2dgTsFQoCABAKAEYT8vblpvd0CwVagIAEEoABtP%2BnuVmNyhLhbsEACCUAACEEoCR9HrF9mo/HEuFRwgAQCgBAAglAAChBAAglAAAhBIAgFACABBKAABCCcBInp9fo74uq1kqPEIAAEIJAEAoARhM%2B1dsL/WDslS4SwAAQgnAeFres9zphmapUBMAgFACMKQ2ty13uglYKhQEYFR7bzlbehqWCt8RgIHtt/Fs6clYKnxJAMa2x/azpadkqfCZAAxv201oS0/MUuEfAjCDrbaiLT09S4VbT%2BfzS%2B9nYDOXy8e6v2g/p7FUOAnAlBbtbfs5maUSTgBmVmxvm5lblkomAQAI5YfAAKEEACCUAACEEgCAUAIAEEoAAEIJAEAoAQAIJQAAoQQAIJQAAIQSAIBQAgAQSgAAQgkAQCgBAAglAAChBAAglAAAhBIAgFACABBKAABCCQBAKAEACCUAAKEEACCUAACEEgCAUAIAEEoAAEIJAEAoAQAIJQAAoQQAIJQAAIQSAIBQAgAQSgAAQgkAQCgBAAglAAChBAAglAAAhBIAgFACABBKAABCCQBAKAEACCUAAKEEACCUAACEEgCAUAIAEEoAAEIJAEAoAQAIJQAAoQQAIJQAAIQSAIBQAgAQSgAAQgkAQCgBAAglAAChBAAglAAAhBIAgFACABBKAABCCQBAKAEACCUAAKEEACCUAACEEgCAUAIAEEoAAEIJAEAoAQAIJQAAoQQAIJQAAIQSAIBQAgAQSgAAQgkAQCgBAAglAAChBAAglAAAhBIAgFC/ej/ASpfLR%2B9HAPif5%2BfX3o%2BwmDcAgFACABBKAABCCQBAKAEACCUAAKEEACCUAACEEgCAUAIAEEoAAEIJAEAoAQAIJQAAoQQAIJQAAIQSAIBQAgAQatRfCXkoxa%2BC86srT6fT%2B/uf7/7o7e13yyc5JvOpmc9%2Bns7nl97PsMYRDtZFvwL0CA/cWLFvPwvcyeZTG24%2BI/5OYAFYY/UnHZKBRVv31hG2cQPmUxt0PgLQTq%2BTdJPPeOIMrN66tyY%2B5synNvR8RgyAHwIvsNUHPOJCecQmu3fDf%2BdozKdmPu0JwKO2PbXna8C2u26%2BPWw%2BNfPpQgAessd5PVMD9thvM%2B1h86mZTy8CcN9%2BJ/UcDdhvp82xh82nZj4dCcAde5/Rozdg7z02%2Bh42n5r59CUAlTan87gNaLO7xt3D5lMzn%2B4EACCUAHyr5cV8xJeAlherES9x5lMznyMQAIBQAvC19lfysV4C2l%2BpxrrEmU/NfA5CAABCCQBAKAH4Qq/vxozyXaBeb9OjvMWbT818jkMAAEIJAEAoAQAIJQAAoQQAIJQAAIQSAIBQAgAQSgC%2BcLl8RH3dpd7efkd93aXMp2Y%2BxyEAAKEEACCUAHyt/XdjRvn%2Bz1X7t%2Bmx3t/Np2Y%2BByEAAKEE4Fstr%2BRjXf%2BvWl6pRry%2BmU/NfI5AAABCCUClzcV8xOv/VZuL1bjXN/OpmU93AnDH3qfzuKf/1d67a/Tdaz418%2BlLAO7b74we/fS/2m%2BPzbF7zadmPh0JwEP2OKnnOP2v9thpM%2B1e86mZTy8C8Khtz%2BuZTv%2BrbffbfLvXfGrm04UALLDVqT3f6X%2B11a6bdfeaT8182ns6n196P8Mafc/Q5%2BfXdX9x1qP/H%2B/vf9b9xZCtaz61Qeez%2BljoSADWW/R5H%2BGBG1u0jUOOtlvmUxtuPgLQzqHO0%2BKDP9Rz9lLs5CPs2%2B7MpzbKfASgHQcrcCgjBsAPgQFCCQBAKAEACCUAAKEEACCUAACEEgCAUAIAEEoAAEIJAEAoAQAIJQAAoQQAIJQAAIQSAIBQAgAQSgAAQgkAQCgBAAglAAChBAAglAAAhBIAgFACABBKAABCCQBAKAEACCUAAKEEACCUAACEEgCAUAIAEEoAAEIJAEAoAQAIJQAAoQQAIJQAAIQSAIBQAgAQSgAAQv3q/QAzeH//890fvb39bvkkx2Q%2BNfOpmc9%2Bns7nl97PsMbl8tH7Eap1%2BVngSjWfmvnUhpvP8/Nr70dYTADWWLQ0bx1hmTZgPjXzqQ06HwFop1cAVi/NWxNvY/OpmU9t6PmMGAA/BF5gk9W54b9zNOZTM5%2Ba%2BbQnAI/adlXNt0bNp2Y%2BNfPpQgAessd6mmmNmk/NfGrm04sA3LffSppjjZpPzXxq5tORANyx9xoafY2aT818aubTlwBU2qyecdeo%2BdTMp2Y%2B3QkAQCgB%2BFbLi8OIlxTzqZlPzXyOQAAAQgnA19pfGca6pJhPzXxq5nMQAgAQSgAAQgnAF3q9LY7ylmo%2BNfOpmc9xCABAKAEACCUAAKEEACCUAACEEgCAUAIAEEoAAEIJwBfe3n5Hfd2lzKdmPjXzOQ4BAAglAAChBOBr7d8Wx3o/NZ%2Ba%2BdTM5yAEACCUAHyr5ZVhxOuJ%2BdTMp2Y%2BRyAAAKEEoNLm4jDu9cR8auZTM5/uBOCOvVfP6KvTfGrmUzOfvgTgvv3W0Byr03xq5lMzn44E4CF7rKSZVqf51MynZj69CMCjtl1P861O86mZT818uhCABbZaVbOuTvOpmU/NfNp7Op9fej/DGpfLR8ev/v7%2BZ91fDFma5lMzn9qg83l%2Bfu341dcRgPUWLdOQrXvLfGrmUxtuPgLQzhEC8FexUo%2BwLrszn5r51EaZjwC0c6gAAIwYAD8EBgglAAChBAAglAAAhBIAgFACABBKAABCCQBAKAEACCUAAKEEACCUAACEEgCAUAIAEEoAAEIJAEAoAQAIJQAAoQQAIJQAAIQaNQAj/v5lYFaDnkijBgCAHxIAgFACABBKAABCCQBAKAEACDVwAAb9766AyYx7Fg0cAAB%2BQgAAQgkAQCgBAAg1dgDG/dkLMIehT6GxAwDAagIAEEoAAEINH4ChvwEHDG3082f4AACwjgAAhJohAKO/hQEjmuDkmSEAAKzwq/cDzOD9/c93f/T29rvlkxyT%2BdTMp2Y%2B%2B3k6n196P8M2LpePxl%2BxWJefBa5U86mZT%2B3g85ng%2Bz8nAVhn0dK8FbKNzadmPrUh5iMAh9OgAauX5q2Jt7H51MynNsp85jj9T34IvMgmq3PDf%2BdozKdmPjXzaU8AHrXtqppvjZpPzXxq5tPFVAHY771sj/U00xo1n5r51MaazzTf/zlNFoCd7LeS5tjD5lMzn5r5dDRbADaP895raPQ1aj4186kNN5%2BZrv%2Bn%2BQKwrTa7a9w9bD4186mZT3cTBmCyRAMHMd/ZMmEAttLy4jDiJcV8auZTM58jmDMA84Ua6GvKU2XOAPxc%2ByvDWJcU86mZT818DmLaAEyZa6CLWc%2BTaQMAQG3mAKyOdq%2B3xVHeUs2nZj614eYz6/X/NHcATlN/ckADc58hkwcAgO/MH4C5Aw7sZ/rTY/4AAPCliABMn3FgcwnnRkQAThmfJbCVkBMjJQCnmE8U%2BKGcsyIoAADcygrAg2F/e/u995Mc6usuZT4186kdfD451/9TWgBOYZ8usEja%2BRAXgFPeZww8IvBkSAzAI9q/pY7y/n5lPjXzqZnPQYQGIDD1QCHzTAgNwOmBz7vllWHE64n51Myndqj5ZJ7%2Bp%2BQAnII/deCv5HMgOgCne599m0vKiNe3K/OpmU/tCPNJPv1PAnDq3YBxd%2B%2BV%2BdTMp9Z3PuGn/0kArno1YPTde2U%2BNfOp9ZqP0/8kAH%2B1b8Acu/fKfGrmU2s/H6f/lQD8T8sGzLR7r8ynZj61lvNx%2Bv8lAP%2BnTQPm271X5lMzn1qb%2BTj9bz2dzy%2B9n%2BFwLpeP%2Bn/w/v5n3b8869b9h/nUzKe233yc/v8QgK/dbcBp4TIN2bq3zKdmPrXN5%2BP0/0wAvvVIA66KlRq4bz8zn5r51DaZj9P/SwJwx%2BMZAA7I0V/wQ%2BA7rB4Yl/1bE4D7rCEYkZ17l28BLeDbQTAER/%2BDvAEsYFXB8dmnjxOAZawtODI7dBHfAlrJt4PgUBz9KwjAj8gAdOfoX823gH7EyoO%2B7MGf8AawDa8C0Jij/%2BcEYEsyAA04%2BrciANuTAdiJo39bArAXGYANOfr3IAD7kgH4IUf/fgSgESWARZz7DQhAUzIAdzn6mxGAPpQA/uHcb08AOlMCwjn3OxKAAxEDQjj0D0IAjksPmIYT/5gEYDCqwME56wciAACh/L%2BBAoQSAIBQAgAQSgAAQgkAQCgBAAglAAChBAAglAAAhBIAgFACABBKAABCCQBAKAEACCUAAKEEACCUAACEEgCAUAIAEEoAAEIJAEAoAQAIJQAAoQQAIJQAAIQSAIBQAgAQSgAAQgkAQCgBAAglAAChBAAglAAAhBIAgFACABBKAABCCQBAKAEACCUAAKEEACCUAACEEgCAUAIAEEoAAEIJAEAoAQAIJQAAoQQAIJQAAIQSAIBQAgAQSgAAQgkAQCgBAAglAAChBAAglAAAhBIAgFACABDqv4%2BRuF52pGyFAAAAAElFTkSuQmCC%22%2C%0A%20%20%20%20%20%20%22sizes%22%3A%20%22512x512%22%2C%0A%20%20%20%20%20%20%22type%22%3A%20%22image/png%22%0A%20%20%20%20%7D%0A%20%20%5D%0A%7D">
+
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f2f2f7;
+  --white: #fff;
+  --text: #1c1c1e;
+  --text2: #8e8e93;
+  --text3: #c7c7cc;
+  --border: #e5e5ea;
+  --sun: #e5503a;
+  --sat: #3478f6;
+  --today-ring: #1c1c1e;
+  --header-h: 52px;
+  --filter-h: 40px;
+  --bottom-h: 58px;
+  --safe: env(safe-area-inset-bottom, 0px);
+  /* Calendar colors */
+  --cal-work:    #3478f6;
+  --cal-family:  #30d158;
+  --cal-personal:#ff9f0a;
+  --cal-health:  #ff6b6b;
+  --cal-hobby:   #bf5af2;
+}
+*, *::before, *::after { box-sizing: border-box; margin:0; padding:0; -webkit-tap-highlight-color:transparent; }
+html, body { height:100%; overflow:hidden; }
+body {
+  font-family: 'Noto Sans TC', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  max-width: 430px;
+  margin: 0 auto;
+  display: flex; flex-direction: column;
+  position: relative; overflow: hidden;
+}
+
+/* ════════ TOP BAR ════════ */
+.top-bar {
+  flex-shrink: 0;
+  height: var(--header-h);
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: center;
+  padding: 0 14px; gap: 8px;
+  position: relative; z-index: 100;
+}
+.tb-left { display:flex; align-items:center; gap:6px; }
+.tb-center { flex:1; display:flex; justify-content:center; }
+.tb-right { display:flex; align-items:center; gap:6px; }
+.month-nav { display:flex; align-items:center; gap:6px; }
+.nav-btn {
+  width:30px; height:30px; border-radius:50%;
+  border:none; background:transparent; cursor:pointer;
+  font-size:17px; color:var(--text2);
+  display:flex; align-items:center; justify-content:center;
+  transition: background .15s;
+}
+.nav-btn:active { background: var(--border); }
+.month-label {
+  font-size:16px; font-weight:800; letter-spacing:-.2px; cursor:pointer;
+  min-width:120px; text-align:center;
+}
+.icon-btn {
+  width:34px; height:34px; border-radius:50%;
+  border:none; background:transparent; cursor:pointer; font-size:18px;
+  display:flex; align-items:center; justify-content:center; color:var(--text);
+}
+.fab {
+  width:34px; height:34px; border-radius:50%;
+  background:var(--text); color:#fff; font-size:22px; font-weight:300;
+  border:none; cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+  box-shadow:0 2px 10px rgba(0,0,0,.2);
+}
+
+/* ════════ FILTER ROW ════════ */
+.filter-row {
+  flex-shrink:0; height:var(--filter-h);
+  background:var(--white); border-bottom:1px solid var(--border);
+  display:flex; align-items:center; gap:6px;
+  padding:0 0 0 10px; overflow:hidden;
+  scrollbar-width:none; position:relative; z-index:99;
+}
+.filter-chips {
+  display:flex; align-items:center; gap:6px;
+  overflow-x:auto; flex:1; padding-right:6px;
+  scrollbar-width:none;
+}
+.filter-chips::-webkit-scrollbar { display:none; }
+.filter-edit-btn {
+  flex-shrink:0; height:28px; padding:0 10px;
+  border:none; background:transparent;
+  font-size:16px; cursor:pointer; color:var(--text2);
+  display:flex; align-items:center; justify-content:center;
+  border-left:1px solid var(--border);
+}
+.filter-edit-btn:active { background:var(--bg); }
+.f-chip {
+  display:flex; align-items:center; gap:5px;
+  padding:4px 10px; border-radius:20px;
+  border:1.5px solid var(--border); background:var(--white);
+  font-size:11px; font-weight:700; color:var(--text2);
+  cursor:pointer; white-space:nowrap; flex-shrink:0;
+  transition:all .15s;
+}
+.f-chip.on { color:var(--white); border-color:transparent; }
+.f-chip .dot { width:8px; height:8px; border-radius:50%; flex-shrink:0; }
+.f-chip.on .dot { background:rgba(255,255,255,.6); }
+
+/* ════════ SCROLL AREA ════════ */
+.scroll-area {
+  flex:1; overflow-y:auto; overflow-x:hidden;
+  scrollbar-width:none;
+  padding-bottom: calc(var(--bottom-h) + var(--safe) + 8px);
+  display:flex; flex-direction:column;
+}
+.scroll-area::-webkit-scrollbar { display:none; }
+/* 月曆和清單視圖正常 block，週曆視圖 flex fill */
+#viewMonth.active, #viewList.active { display:block; flex:none; }
+#viewWeek.active { flex:1; overflow:hidden; }
+
+/* ════════ WEEKDAY HEADER ════════ */
+.wd-row {
+  display:grid; grid-template-columns:repeat(7,1fr);
+  background:var(--white); border-bottom:1px solid var(--border);
+  position:sticky; top:0; z-index:50;
+}
+.wd {
+  text-align:center; font-size:10px; font-weight:700;
+  color:var(--text2); padding:5px 0; letter-spacing:.3px;
+}
+.wd.s { color:var(--sun); }
+.wd.sa { color:var(--sat); }
+
+/* ════════ MONTH GRID ════════ */
+.month-grid {
+  display:grid; grid-template-columns:repeat(7,1fr);
+  background:var(--border); gap:1px;
+}
+.day-cell {
+  background:var(--white); min-height:80px;
+  padding:3px 2px 3px; cursor:pointer; overflow:hidden;
+  position:relative;
+  transition:background .1s;
+}
+.day-cell:active { background:#f5f5fa; }
+.day-cell.dim-cell { background:#fafafa; }
+.day-cell.dim-cell .dn, .day-cell.dim-cell .ln { color:var(--text3) !important; }
+.day-cell.copy-marked-cell { background:#fff3cd; outline:2px solid #ff9f0a; outline-offset:-2px; }
+.day-cell.copy-marked-cell .dn { color:#ff9f0a !important; font-weight:900; }
+
+/* Day number */
+.dn-wrap { text-align:center; margin-bottom:1px; }
+.dn {
+  display:inline-flex; align-items:center; justify-content:center;
+  width:24px; height:24px; border-radius:50%;
+  font-size:13px; font-weight:500; color:var(--text);
+}
+.day-cell.today-cell .dn {
+  background:var(--today-ring); color:#fff; font-weight:800;
+}
+.day-cell.sun-cell .dn { color:var(--sun); }
+.day-cell.sat-cell .dn { color:var(--sat); }
+.day-cell.today-cell.sun-cell .dn,
+.day-cell.today-cell.sat-cell .dn { color:#fff; }
+.ln { font-size:8px; color:var(--text3); text-align:center; line-height:1.2; margin-bottom:2px; }
+
+/* Event tags in cell */
+.cell-tags { display:flex; flex-direction:column; gap:1.5px; }
+.ctag {
+  border-radius:3px; font-size:9px; font-weight:700;
+  color:#fff; padding:1.5px 3px; line-height:13px; height:13px;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.ctag.timed {
+  color: var(--ctag-color, #3478f6);
+  background: var(--ctag-bg, rgba(52,120,246,0.13)) !important;
+  font-weight:600;
+}
+.ctag.more { background:var(--text3); text-align:center; font-size:8px; }
+/* Sticker on cell */
+.cell-sticker {
+  position:absolute; top:2px; right:2px;
+  font-size:12px; line-height:1;
+}
+
+/* ════════ WEEK VIEW ════════ */
+.week-view {
+  background:var(--white);
+  display:flex; flex-direction:column;
+  height:100%;
+  overflow:hidden;
+}
+.week-header {
+  display:grid; grid-template-columns:44px repeat(7,1fr);
+  border-bottom:1px solid var(--border);
+  background:var(--white);
+  flex-shrink:0;
+}
+.wh-empty { border-right:1px solid var(--border); }
+.wh-day {
+  text-align:center; padding:6px 2px;
+  cursor:pointer; transition:background .1s;
+}
+.wh-day:active { background:var(--bg); }
+.wh-dn {
+  font-size:10px; font-weight:700; color:var(--text2);
+  letter-spacing:.2px; margin-bottom:2px;
+}
+.wh-num {
+  display:inline-flex; align-items:center; justify-content:center;
+  width:28px; height:28px; border-radius:50%;
+  font-size:16px; font-weight:800;
+}
+.wh-day.today-col .wh-num { background:var(--today-ring); color:#fff; }
+.wh-day.sun-col .wh-dn, .wh-day.sun-col .wh-num { color:var(--sun); }
+.wh-day.sat-col .wh-dn, .wh-day.sat-col .wh-num { color:var(--sat); }
+.wh-day.today-col .wh-num { color:#fff !important; }
+
+/* 全日行事列 */
+.allday-row {
+  display:grid; grid-template-columns:44px repeat(7,1fr);
+  border-bottom:2px solid var(--border);
+  background:var(--white);
+  flex-shrink:0;
+}
+.allday-label {
+  border-right:1px solid var(--border);
+  display:flex; align-items:center; justify-content:flex-end;
+  padding:0 5px; font-size:9px; color:var(--text3); font-weight:700;
+}
+.allday-cell {
+  border-right:1px solid var(--border);
+  padding:2px 1px; min-height:20px;
+  display:flex; flex-direction:column; gap:1px;
+}
+.allday-cell:last-child { border-right:none; }
+.allday-ev {
+  border-radius:3px; padding:1px 4px;
+  font-size:9px; font-weight:700; color:#fff;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+  cursor:pointer; line-height:14px;
+}
+
+.week-body { display:grid; grid-template-columns:44px repeat(7,1fr); }
+.week-scroll-container {
+  overflow-y:auto;
+  flex:1; min-height:0;
+}
+/* scrollbar 佔位塊：寬度與 scrollbar 一致 */
+.wh-scrollbar-pad {
+  width: var(--scrollbar-w, 8px);
+  flex-shrink: 0;
+  background: var(--white);
+}
+.week-header { display:grid; grid-template-columns:44px repeat(7,1fr) var(--scrollbar-w, 8px); }
+.allday-row  { display:grid; grid-template-columns:44px repeat(7,1fr) var(--scrollbar-w, 8px); }
+.time-col { border-right:1px solid var(--border); }
+.time-slot {
+  height:52px; display:flex; align-items:flex-start; justify-content:flex-end;
+  padding:0 6px 0 0; border-bottom:1px solid var(--border);
+  font-size:10px; color:var(--text3); padding-top:2px;
+}
+.day-col { border-right:1px solid var(--border); position:relative; }
+.day-col:last-child { border-right:none; }
+.week-slot {
+  height:52px; border-bottom:1px solid var(--border);
+  position:relative; cursor:pointer;
+}
+.week-slot:active { background:var(--bg); }
+.week-ev {
+  position:absolute;
+  border-radius:4px; padding:2px 4px;
+  font-size:9px; font-weight:700; color:#fff;
+  overflow:hidden; cursor:pointer; z-index:10;
+  line-height:1.3; box-sizing:border-box;
+}
+
+
+/* ════════ SCHEDULE LIST ════════ */
+.schedule-view { }
+.sched-month { padding:10px 16px 6px; font-size:11px; font-weight:800; color:var(--text2); letter-spacing:.5px; background:var(--bg); position:sticky; top:0; z-index:10; }
+.sched-day { margin:0 0 2px; }
+.sched-day-hd {
+  display:flex; align-items:baseline; gap:8px;
+  padding:10px 16px 4px; background:var(--white);
+  border-top:1px solid var(--border);
+}
+.sched-day-num { font-size:26px; font-weight:900; line-height:1; }
+.sched-day-num.s { color:var(--sun); }
+.sched-day-num.sa { color:var(--sat); }
+.sched-day-dow { font-size:12px; color:var(--text2); font-weight:600; }
+.sched-day-lunar { font-size:11px; color:var(--text3); }
+.sched-ev {
+  background:var(--white); border-bottom:1px solid var(--border);
+  display:flex; align-items:flex-start; gap:10px; padding:10px 16px;
+}
+.sev-bar { width:4px; min-height:36px; border-radius:2px; flex-shrink:0; margin-top:2px; }
+.sev-info { flex:1; }
+.sev-title { font-size:14px; font-weight:700; }
+.sev-meta { font-size:11px; color:var(--text2); margin-top:3px; display:flex; gap:6px; flex-wrap:wrap; }
+.badge { background:#f2f2f7; border-radius:20px; padding:1px 7px; font-size:10px; color:var(--text2); }
+.sev-acts { display:flex; gap:4px; }
+.smbtn {
+  width:28px; height:28px; border-radius:8px;
+  border:1px solid var(--border); background:transparent;
+  font-size:12px; cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+}
+.smbtn:active { background:var(--border); }
+.no-ev-day { padding:10px 16px 14px; background:var(--white); border-bottom:1px solid var(--border); font-size:13px; color:var(--text3); }
+
+/* ════════ SELECTED DAY PANEL ════════ */
+.day-panel {
+  background:var(--white);
+  border-top:3px solid var(--bg);
+}
+.dp-head {
+  display:flex; align-items:center; justify-content:space-between;
+  padding:12px 16px 8px;
+}
+.dp-title { font-size:15px; font-weight:800; }
+.dp-lunar { font-size:11px; color:var(--text2); }
+.dp-count { font-size:12px; color:var(--text2); }
+
+/* ════════ BOTTOM NAV ════════ */
+.bottom-nav {
+  position:fixed; bottom:0; left:50%; transform:translateX(-50%);
+  width:100%; max-width:430px; z-index:200;
+  background:rgba(255,255,255,.95); backdrop-filter:blur(12px);
+  border-top:1px solid var(--border);
+  display:flex;
+  height:calc(var(--bottom-h) + var(--safe));
+  padding-bottom:var(--safe);
+}
+.bn {
+  flex:1; display:flex; flex-direction:column;
+  align-items:center; justify-content:center; gap:2px;
+  border:none; background:transparent; cursor:pointer;
+  color:var(--text2); font-size:10px; font-weight:600;
+  font-family:inherit; padding-top:4px;
+}
+.bn.on { color:var(--text); }
+.bn-icon { font-size:20px; line-height:1.2; }
+.bn-dot { /* optional active indicator */ }
+
+/* ════════ MODAL ════════ */
+.overlay {
+  display:none; position:fixed; inset:0; z-index:500;
+  background:rgba(0,0,0,.4); backdrop-filter:blur(6px);
+  align-items:flex-end; justify-content:center;
+}
+.overlay.open { display:flex; }
+.modal-sheet {
+  background:var(--white); border-radius:22px 22px 0 0;
+  padding:16px 18px calc(32px + var(--safe));
+  width:100%; max-width:430px; max-height:92vh; overflow-y:auto;
+  animation:sup .28s cubic-bezier(.32,1.2,.65,1);
+}
+@keyframes sup { from{transform:translateY(100%)} to{transform:none} }
+.ms-handle { width:36px; height:4px; background:var(--border); border-radius:2px; margin:0 auto 16px; }
+.ms-title { font-size:18px; font-weight:900; margin-bottom:16px; }
+
+/* Form */
+.fg { margin-bottom:13px; }
+.fl { font-size:10.5px; font-weight:800; color:var(--text2); letter-spacing:.6px; display:block; margin-bottom:6px; text-transform:uppercase; }
+.fi,.fsel,.fta {
+  width:100%; border:1.5px solid var(--border); border-radius:11px;
+  background:var(--bg); font-family:inherit; font-size:14px;
+  color:var(--text); padding:11px 13px; outline:none;
+  transition:border-color .18s;
+}
+.fi:focus,.fsel:focus,.fta:focus { border-color:var(--text); background:#fff; }
+.fsel { appearance:none; cursor:pointer; }
+.fta { resize:none; height:72px; }
+.row2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+
+/* Color selector */
+.color-grid { display:flex; flex-wrap:wrap; gap:8px; }
+.cc {
+  width:32px; height:32px; border-radius:50%; cursor:pointer;
+  border:3px solid transparent; transition:transform .15s, border-color .15s;
+}
+.cc.on { border-color:var(--text); transform:scale(1.18); }
+
+/* Calendar type selector */
+.cal-type-list { display:flex; flex-direction:row; flex-wrap:wrap; gap:8px; }
+.cal-type-opt {
+  display:flex; align-items:center; gap:6px;
+  padding:7px 12px; border-radius:20px; cursor:pointer;
+  border:1.5px solid var(--border); background:var(--bg);
+  transition:all .15s; flex-shrink:0;
+}
+.cal-type-opt.on { border-color:var(--text); background:#fff; box-shadow:0 0 0 1px var(--text); }
+.cal-dot { width:9px; height:9px; border-radius:50%; flex-shrink:0; }
+.cal-icon { font-size:15px; line-height:1; flex-shrink:0; }
+.cal-type-name { font-size:12px; font-weight:700; }
+.cal-edit-btn {
+  width:26px; height:26px; border-radius:8px;
+  border:none; background:transparent; cursor:pointer;
+  font-size:14px; color:var(--text3); display:flex;
+  align-items:center; justify-content:center; flex-shrink:0;
+  transition:background .1s;
+}
+.cal-edit-btn:active { background:var(--border); }
+
+/* 分類編輯彈窗 */
+.cal-editor-mask {
+  display:none; position:fixed; inset:0; z-index:600;
+  background:rgba(0,0,0,.5); backdrop-filter:blur(4px);
+  align-items:flex-end; justify-content:center;
+}
+.cal-editor-mask.open { display:flex; }
+.cal-editor-sheet {
+  background:var(--white); border-radius:22px 22px 0 0;
+  width:100%; max-width:430px;
+  padding:20px 20px 40px;
+  animation:sup .28s cubic-bezier(.32,1.2,.65,1);
+}
+.cal-editor-title { font-size:16px; font-weight:800; margin-bottom:16px; text-align:center; }
+.cal-editor-row { display:flex; align-items:center; gap:10px; margin-bottom:14px; }
+.cal-editor-label { font-size:12px; font-weight:700; color:var(--text2); width:36px; flex-shrink:0; }
+.cal-icon-grid {
+  display:flex; flex-wrap:wrap; gap:6px;
+}
+.cal-icon-opt {
+  width:38px; height:38px; border-radius:10px;
+  border:1.5px solid var(--border); background:var(--bg);
+  display:flex; align-items:center; justify-content:center;
+  font-size:20px; cursor:pointer; transition:all .15s;
+}
+.cal-icon-opt.on { border-color:var(--text); background:#fff; box-shadow:0 0 0 2px var(--text); }
+.cal-name-input {
+  flex:1; padding:10px 12px; border-radius:10px;
+  border:1.5px solid var(--border); background:var(--bg);
+  font-size:14px; font-weight:700; font-family:inherit;
+  outline:none;
+}
+.cal-name-input:focus { border-color:var(--text); background:#fff; }
+.cal-color-row { display:flex; gap:8px; flex-wrap:wrap; }
+.cal-color-opt {
+  width:32px; height:32px; border-radius:50%; cursor:pointer;
+  border:2.5px solid transparent; transition:all .15s;
+}
+.cal-color-opt.on { border-color:var(--text); box-shadow:0 0 0 2px var(--text); }
+.cal-editor-body {
+  display:flex; gap:12px; margin-bottom:14px; min-height:160px;
+}
+.cal-list-col {
+  width:110px; flex-shrink:0;
+  display:flex; flex-direction:column; gap:4px;
+  border-right:1px solid var(--border); padding-right:12px;
+}
+.cal-list-item {
+  display:flex; align-items:center; gap:7px;
+  padding:8px 10px; border-radius:10px; cursor:pointer;
+  font-size:13px; font-weight:700; color:var(--text2);
+  border:none; background:transparent; font-family:inherit;
+  text-align:left; transition:background .12s;
+}
+.cal-list-item:active { background:var(--border); }
+.cal-list-item.on { background:var(--bg); color:var(--text); }
+.cal-list-dot { width:10px; height:10px; border-radius:50%; flex-shrink:0; }
+.cal-add-btn {
+  margin-top:4px; padding:7px 10px; border-radius:10px;
+  border:1.5px dashed var(--border); background:transparent;
+  font-size:12px; font-weight:700; color:var(--text3);
+  cursor:pointer; font-family:inherit; text-align:left;
+}
+.cal-edit-col { flex:1; min-width:0; }
+
+
+  width:100%; padding:14px; border-radius:14px;
+  background:var(--text); color:#fff; border:none;
+  font-size:15px; font-weight:800; font-family:inherit;
+  cursor:pointer; margin-top:6px;
+}
+.cal-editor-cancel {
+  width:100%; padding:12px; border-radius:14px;
+  background:transparent; color:var(--text2); border:none;
+  font-size:14px; font-weight:600; font-family:inherit;
+  cursor:pointer; margin-top:6px;
+}
+
+/* Sticker picker */
+.sticker-row { display:flex; gap:6px; flex-wrap:wrap; }
+.sticker-opt {
+  width:36px; height:36px; border-radius:10px;
+  background:var(--bg); border:1.5px solid var(--border);
+  font-size:20px; cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+  transition:all .15s;
+}
+.sticker-opt.on { border-color:var(--text); background:#fff; transform:scale(1.1); }
+
+/* Save/Cancel */
+.btn-save {
+  width:100%; padding:14px; border-radius:13px;
+  background:var(--text); color:#fff;
+  border:none; font-size:16px; font-weight:800;
+  cursor:pointer; font-family:inherit; margin-top:8px;
+}
+.btn-save:active { opacity:.85; }
+.btn-cancel {
+  width:100%; padding:12px; border-radius:13px;
+  background:transparent; border:1.5px solid var(--border);
+  font-size:14px; cursor:pointer; font-family:inherit; color:var(--text2); margin-top:8px;
+}
+
+/* ════════ DAY POPUP ════════ */
+.day-overlay {
+  display:none; position:fixed; inset:0; z-index:400;
+  background:rgba(0,0,0,.35); backdrop-filter:blur(4px);
+  align-items:flex-end; justify-content:center;
+  pointer-events:none;
+}
+.day-overlay.open { display:flex; pointer-events:auto; }
+.day-popup {
+  background:var(--white); border-radius:22px 22px 0 0;
+  width:100%; max-width:430px;
+  max-height:78vh; display:flex; flex-direction:column;
+  animation:sup .28s cubic-bezier(.32,1.2,.65,1);
+  pointer-events:auto;
+  position:relative; z-index:401;
+}
+.dp-drag { width:36px; height:4px; background:var(--border); border-radius:2px; margin:12px auto 0; flex-shrink:0; }
+.dp-topbar {
+  display:flex; align-items:center; justify-content:space-between;
+  padding:12px 16px 10px; flex-shrink:0;
+  border-bottom:1px solid var(--border);
+}
+.dp-left { flex:1; }
+.dp-date-big { font-size:22px; font-weight:900; }
+.dp-date-sub { font-size:12px; color:var(--text2); margin-top:1px; }
+.dp-topbar-actions { display:flex; align-items:center; gap:8px; }
+.dp-close {
+  width:32px; height:32px; border-radius:50%; background:var(--bg);
+  border:none; cursor:pointer; font-size:16px;
+  display:flex; align-items:center; justify-content:center;
+}
+.dp-add-btn {
+  display:flex; align-items:center; gap:5px;
+  padding:7px 14px; border-radius:20px;
+  background:var(--text); color:#fff; border:none;
+  font-size:12px; font-weight:700; cursor:pointer; font-family:inherit;
+}
+.dp-scroll { overflow-y:auto; flex:1; padding:0 0 24px; }
+.dp-no-ev { text-align:center; padding:32px 16px; color:var(--text3); font-size:14px; line-height:1.8; }
+.dp-ev-item {
+  display:flex; align-items:flex-start; gap:10px;
+  padding:12px 16px; border-bottom:1px solid var(--border);
+}
+.dp-ev-bar { width:4px; min-height:40px; border-radius:2px; flex-shrink:0; margin-top:2px; }
+.dp-ev-body { flex:1; min-width:0; }
+.dp-ev-title { font-size:15px; font-weight:700; display:flex; align-items:center; gap:5px; }
+.dp-ev-time { font-size:12px; color:var(--text2); margin-top:3px; }
+.dp-ev-badges { display:flex; gap:5px; flex-wrap:wrap; margin-top:5px; }
+.dp-badge { background:var(--bg); border-radius:20px; padding:2px 8px; font-size:10px; color:var(--text2); font-weight:600; }
+.dp-ev-note { font-size:12px; color:var(--text2); margin-top:4px; }
+.dp-ev-acts { display:flex; flex-direction:column; gap:4px; }
+.dp-btn {
+  width:30px; height:30px; border-radius:8px;
+  border:1px solid var(--border); background:transparent;
+  font-size:13px; cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+}
+.dp-btn:active { background:var(--border); }
+
+/* Toast */
+.toast {
+  position:fixed; bottom:calc(var(--bottom-h) + 12px + var(--safe));
+  left:50%; transform:translateX(-50%);
+  background:var(--text); color:#fff; border-radius:22px;
+  padding:8px 22px; font-size:13px; font-weight:700;
+  opacity:0; transition:opacity .25s; pointer-events:none;
+  white-space:nowrap; z-index:999;
+}
+.toast.show { opacity:1; }
+
+/* View transition */
+.view { display:none; }
+.view.active { display:block; }
+#viewWeek.active { display:flex; flex-direction:column; }
+.hidden { display:none !important; }
+
+/* Cal color classes */
+.cc-work    { background:var(--cal-work); }
+.cc-family  { background:var(--cal-family); }
+.cc-personal{ background:var(--cal-personal); }
+.cc-health  { background:var(--cal-health); }
+.cc-hobby   { background:var(--cal-hobby); }
+
+/* ════════ 自訂確認對話框（取代 confirm()）════════ */
+.confirm-mask {
+  display:none; position:fixed; inset:0; z-index:900;
+  background:rgba(0,0,0,.5); backdrop-filter:blur(4px);
+  align-items:center; justify-content:center;
+}
+.confirm-mask.open { display:flex; }
+.confirm-box {
+  background:var(--white); border-radius:18px;
+  padding:24px 20px 16px; width:280px;
+  box-shadow:0 20px 60px rgba(0,0,0,.25);
+  animation:popIn .2s cubic-bezier(.34,1.56,.64,1);
+}
+@keyframes popIn { from{transform:scale(.85);opacity:0} to{transform:scale(1);opacity:1} }
+.confirm-title { font-size:16px; font-weight:800; text-align:center; margin-bottom:8px; }
+.confirm-msg   { font-size:13px; color:var(--text2); text-align:center; margin-bottom:20px; }
+.confirm-btns  { display:flex; gap:10px; }
+.confirm-btn {
+  flex:1; padding:12px; border-radius:12px;
+  border:none; font-size:14px; font-weight:700;
+  cursor:pointer; font-family:inherit;
+}
+.confirm-btn.cancel { background:var(--bg); color:var(--text2); }
+.confirm-btn.ok     { background:#ff3b30; color:#fff; }
+.confirm-btn:active { opacity:.8; }
+#timeRow.disabled { opacity: 0.35; pointer-events: none; }
+#timeRow.disabled .fi { background: var(--bg); color: var(--text3); }
+/* ════════ DESKTOP RWD (≥ 600px) ════════ */
+@media (min-width: 600px) {
+  body {
+    max-width: 720px;
+    border-left: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+  }
+  .bottom-nav {
+    max-width: 720px;
+    border-left: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+  }
+  /* Modal 改為置中彈窗 */
+  .overlay {
+    align-items: center;
+  }
+  .modal-sheet {
+    max-width: 520px;
+    border-radius: 22px;
+    max-height: 88vh;
+    padding-bottom: 24px;
+  }
+  /* Day popup 置中 */
+  .day-overlay {
+    align-items: center;
+  }
+  .day-popup {
+    max-width: 520px;
+    border-radius: 22px;
+    max-height: 80vh;
+  }
+  /* Cal editor 置中 */
+  .cal-editor-mask {
+    align-items: center;
+  }
+  .cal-editor-sheet {
+    max-width: 480px;
+    border-radius: 22px;
+    padding: 28px 28px 28px;
+  }
+  /* Confirm dialog 已是置中 */
+  /* 月曆格放大 */
+  .cell { min-height: 80px; }
+  /* 字體微調 */
+  .month-label { font-size: 18px; }
+  .top-bar { padding: 0 20px; }
+  .filter-row { padding: 0 0 0 16px; }
+}
+
+@media (min-width: 900px) {
+  body { max-width: 900px; }
+  .bottom-nav { max-width: 900px; }
+  .cell { min-height: 100px; }
+  .modal-sheet { max-width: 580px; }
+}
+
+</style>
+</head>
+<body>
+
+<!-- 複製模式橫幅 -->
+<div id="copyBanner" style="display:none;position:fixed;top:var(--header-h);left:50%;transform:translateX(-50%);width:100%;max-width:720px;z-index:300;background:#ff9f0a;color:#fff;padding:10px 16px;display:none;align-items:center;justify-content:space-between;font-size:13px;font-weight:700;box-shadow:0 2px 8px rgba(0,0,0,.15)">
+  <span id="copyBannerText">📋 複製模式：點選日期貼上</span>
+  <div style="display:flex;gap:8px">
+    <button onclick="saveCopyMode()" style="padding:6px 14px;border-radius:10px;background:#fff;color:#ff9f0a;border:none;font-weight:800;font-size:12px;cursor:pointer;font-family:inherit">儲存 (<span id="copyCount">0</span>)</button>
+    <button onclick="cancelCopyMode()" style="padding:6px 14px;border-radius:10px;background:rgba(255,255,255,.25);color:#fff;border:none;font-weight:700;font-size:12px;cursor:pointer;font-family:inherit">取消</button>
+  </div>
+</div>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="tb-left">
+    <button class="icon-btn" title="今天" onclick="goToday()">🏠</button>
+  </div>
+  <div class="tb-center">
+    <div class="month-nav">
+      <button class="nav-btn" onclick="chM(-1)">‹</button>
+      <div class="month-label" id="mLabel" onclick="goToday()"></div>
+      <button class="nav-btn" onclick="chM(1)">›</button>
+    </div>
+  </div>
+  <div class="tb-right">
+    <button class="icon-btn" onclick="showSearch()">🔍</button>
+    <button class="fab" onclick="openModal()">＋</button>
+  </div>
+</div>
+
+<!-- FILTER ROW -->
+<div class="filter-row" id="filterRow">
+  <div class="filter-chips" id="filterChips"></div>
+  <button class="filter-edit-btn" onclick="openCalEditor('work')" title="編輯分類">✎</button>
+</div>
+
+<!-- SCROLL AREA -->
+<div class="scroll-area" id="scrollArea">
+
+  <!-- MONTH VIEW -->
+  <div class="view active" id="viewMonth">
+    <div class="wd-row">
+      <div class="wd s">日</div><div class="wd">一</div><div class="wd">二</div>
+      <div class="wd">三</div><div class="wd">四</div><div class="wd">五</div>
+      <div class="wd sa">六</div>
+    </div>
+    <div class="month-grid" id="monthGrid"></div>
+    <div class="day-panel" id="dayPanel"></div>
+  </div>
+
+  <!-- WEEK VIEW -->
+  <div class="view" id="viewWeek">
+    <div class="week-view" id="weekView"></div>
+  </div>
+
+  <!-- SCHEDULE LIST VIEW -->
+  <div class="view" id="viewList">
+    <div class="schedule-view" id="schedView"></div>
+  </div>
+
+</div>
+
+<!-- BOTTOM NAV -->
+<div class="bottom-nav">
+  <button class="bn on" id="bn-month" onclick="switchView('month',this)">
+    <span class="bn-icon">📅</span>月曆
+  </button>
+  <button class="bn" id="bn-week" onclick="switchView('week',this)">
+    <span class="bn-icon">🗓</span>週曆
+  </button>
+  <button class="bn" id="bn-list" onclick="switchView('list',this)">
+    <span class="bn-icon">📋</span>日曆
+  </button>
+  <button class="bn" id="bn-me" onclick="openSettingsModal()">
+    <span class="bn-icon">👤</span>設定
+  </button>
+</div>
+
+<!-- 設定 Modal -->
+<div class="overlay" id="settingsOverlay" style="display:none">
+  <div class="modal-sheet" style="text-align:center;padding:32px 24px 40px">
+    <div class="ms-handle"></div>
+    <div style="font-size:48px;margin-bottom:12px">📅</div>
+    <div style="font-size:20px;font-weight:900;margin-bottom:6px">個人行事曆</div>
+    <div style="font-size:13px;color:var(--text3);font-weight:700;letter-spacing:1px;margin-bottom:24px">beta.0</div>
+
+    <!-- Google 日曆連結區塊 -->
+    <div style="width:100%;background:var(--bg);border-radius:16px;padding:16px;text-align:left;margin-bottom:20px">
+      <div style="font-size:12px;font-weight:800;color:var(--text2);margin-bottom:12px;letter-spacing:.3px">📆 Google 日曆</div>
+
+      <!-- 未連結狀態 -->
+      <div id="gcal-disconnected">
+        <div style="font-size:12px;color:var(--text3);margin-bottom:12px;line-height:1.6">連結後可同步查看 Google 日曆的事件</div>
+        <button onclick="connectGoogleCalendar()" style="width:100%;padding:12px;border-radius:12px;background:#fff;border:1.5px solid #dadce0;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;display:flex;align-items:center;justify-content:center;gap:8px;color:#3c4043">
+          <svg width="18" height="18" viewBox="0 0 48 48"><path fill="#4285F4" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.08 17.74 9.5 24 9.5z"/><path fill="#34A853" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#EA4335" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-3.59-13.46-8.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
+          使用 Google 帳號連結
+        </button>
+      </div>
+
+      <!-- 已連結狀態（預設隱藏） -->
+      <div id="gcal-connected" style="display:none">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+          <div id="gcal-avatar" style="width:36px;height:36px;border-radius:50%;background:#4285F4;display:flex;align-items:center;justify-content:center;font-size:16px;color:#fff;font-weight:800;flex-shrink:0">G</div>
+          <div style="text-align:left">
+            <div id="gcal-name" style="font-size:13px;font-weight:800;color:var(--text)"></div>
+            <div id="gcal-email" style="font-size:11px;color:var(--text3);margin-top:1px"></div>
+          </div>
+          <div style="margin-left:auto">
+            <div style="font-size:10px;font-weight:700;color:#34A853;background:#e8f5e9;padding:3px 8px;border-radius:6px">已連結</div>
+          </div>
+        </div>
+        <button onclick="disconnectGoogleCalendar()" style="width:100%;padding:10px;border-radius:10px;background:transparent;border:1.5px solid var(--border);font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;color:var(--text3)">斷開連結</button>
+      </div>
+    </div>
+
+    <div style="width:100%;height:1px;background:var(--border);margin-bottom:20px"></div>
+    <div style="font-size:11px;color:var(--text3);font-weight:600;letter-spacing:.8px">DESIGNED BY</div>
+    <div style="font-size:24px;font-weight:900;margin-top:6px;letter-spacing:2px">柏宏</div>
+    <button onclick="closeSettingsModal()" style="margin-top:24px;width:100%;padding:14px;border-radius:14px;background:var(--text);color:#fff;border:none;font-size:15px;font-weight:800;cursor:pointer;font-family:inherit">關閉</button>
+  </div>
+</div>
+<div class="day-overlay" id="dayOverlay">
+  <div class="day-popup">
+    <div class="dp-drag"></div>
+    <div class="dp-topbar">
+      <div class="dp-left">
+        <div class="dp-date-big" id="dpDateBig"></div>
+        <div class="dp-date-sub" id="dpDateSub"></div>
+      </div>
+      <div class="dp-topbar-actions">
+        <button class="dp-add-btn" onclick="openModalFromPopup()">＋ 新增</button>
+        <button class="dp-close" onclick="closeDayPopup()">✕</button>
+      </div>
+    </div>
+    <div class="dp-scroll" id="dpScroll"></div>
+  </div>
+</div>
+
+<!-- ADD/EDIT MODAL -->
+<div class="overlay" id="overlay" onclick="ovClick(event)">
+  <div class="modal-sheet">
+    <div class="ms-handle"></div>
+    <div class="ms-title" id="msTitle">新增事件</div>
+
+    <div class="fg">
+      <label class="fl">📌 標題</label>
+      <input class="fi" id="fTitle" placeholder="事件名稱" maxlength="30">
+    </div>
+    <!-- 全日勾選 -->
+    <div class="fg" style="flex-direction:row;align-items:center;gap:8px;margin-bottom:10px">
+      <input type="checkbox" id="fAllDay" style="width:18px;height:18px;accent-color:var(--text);cursor:pointer" onchange="toggleAllDay(this.checked)">
+      <label for="fAllDay" style="font-size:13px;font-weight:700;color:var(--text2);cursor:pointer">全日</label>
+    </div>
+    <!-- 開始日期 / 結束日期 並排 -->
+    <div class="fg row2">
+      <div>
+        <label class="fl">📅 開始日期</label>
+        <input class="fi" type="date" id="fDate">
+      </div>
+      <div>
+        <label class="fl">📅 結束日期</label>
+        <input class="fi" type="date" id="fEndDate">
+      </div>
+    </div>
+    <!-- 開始時間 / 結束時間 並排（全日時隱藏） -->
+    <div class="fg row2" id="timeRow">
+      <div>
+        <label class="fl">⏰ 開始時間</label>
+        <input class="fi" type="time" id="fStart">
+      </div>
+      <div>
+        <label class="fl">⏰ 結束時間</label>
+        <input class="fi" type="time" id="fEnd">
+      </div>
+    </div>
+    <!-- 隱藏的備用欄位（保留相容性） -->
+    <input type="hidden" id="fEndDateAllDay">
+    <div class="fg">
+      <label class="fl">📁 分類</label>
+      <div class="cal-type-list" id="calTypeList"></div>
+    </div>
+    <div class="fg">
+      <label class="fl">🔁 重複</label>
+      <select class="fsel" id="fRepeat">
+        <option value="none">不重複</option>
+        <option value="daily">每天</option>
+        <option value="weekly">每週</option>
+        <option value="monthly">每月</option>
+        <option value="yearly">每年</option>
+      </select>
+    </div>
+    <div class="fg">
+      <label class="fl">🔔 提醒</label>
+      <select class="fsel" id="fRemind">
+        <option value="none">不提醒</option>
+        <option value="0">事件開始時</option>
+        <option value="5">5 分鐘前</option>
+        <option value="15">15 分鐘前</option>
+        <option value="30">30 分鐘前</option>
+        <option value="60">1 小時前</option>
+        <option value="1440">1 天前</option>
+      </select>
+    </div>
+    <div class="fg">
+      <label class="fl">🎯 貼圖</label>
+      <div class="sticker-row" id="stickerRow">
+        <div class="sticker-opt on" data-s="">—</div>
+        <div class="sticker-opt" data-s="⭐">⭐</div>
+        <div class="sticker-opt" data-s="🔥">🔥</div>
+        <div class="sticker-opt" data-s="❤️">❤️</div>
+        <div class="sticker-opt" data-s="✅">✅</div>
+        <div class="sticker-opt" data-s="🎂">🎂</div>
+        <div class="sticker-opt" data-s="🏥">🏥</div>
+        <div class="sticker-opt" data-s="💼">💼</div>
+        <div class="sticker-opt" data-s="✈️">✈️</div>
+        <div class="sticker-opt" data-s="🎮">🎮</div>
+      </div>
+    </div>
+    <div class="fg">
+      <label class="fl">📝 備註</label>
+      <textarea class="fta" id="fNote" placeholder="選填備註…"></textarea>
+    </div>
+
+    <button class="btn-save" onclick="saveEvent()">儲存</button>
+    <button class="btn-cancel" onclick="closeModal()">取消</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<!-- 分類編輯器 -->
+<div class="cal-editor-mask" id="calEditorMask">
+  <div class="cal-editor-sheet">
+    <div class="cal-editor-title">✎ 編輯分類</div>
+    <div class="cal-editor-body">
+      <!-- 左側：分類清單 -->
+      <div class="cal-list-col">
+        <div id="calEditorList"></div>
+        <button id="addCalBtn" onclick="addCalCategory()" class="cal-add-btn">＋ 新增分類</button>
+      </div>
+      <!-- 右側：編輯區 -->
+      <div class="cal-edit-col">
+        <div class="cal-editor-row">
+          <div class="cal-editor-label">名稱</div>
+          <input class="cal-name-input" id="calNameInput" maxlength="8" placeholder="分類名稱">
+        </div>
+        <div class="cal-editor-row">
+          <div class="cal-editor-label">顏色</div>
+          <div class="cal-color-row" id="calColorRow"></div>
+          <div style="display:flex;align-items:center;gap:8px;margin-top:8px">
+            <label style="font-size:12px;font-weight:700;color:var(--text2)">自訂</label>
+            <input type="color" id="calColorPicker" value="#3478f6" style="width:32px;height:32px;border-radius:50%;border:2px solid var(--border);cursor:pointer;padding:1px;background:none">
+          </div>
+        </div>
+        <button id="calDelBtn" style="display:none;width:100%;padding:10px;border-radius:12px;border:1.5px solid #ff3b30;background:transparent;color:#ff3b30;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;margin-top:4px">🗑 刪除此分類</button>
+      </div>
+    </div>
+    <button class="cal-editor-save" onclick="saveCalEditor()">儲存</button>
+    <button class="cal-editor-cancel" onclick="closeCalEditor()">取消</button>
+  </div>
+</div>
+
+<!-- 自訂確認對話框 -->
+<div class="confirm-mask" id="confirmMask">
+  <div class="confirm-box">
+    <div class="confirm-title">🗑 刪除行程</div>
+    <div class="confirm-msg" id="confirmMsg">確定要刪除這個行程嗎？</div>
+    <div class="confirm-btns">
+      <button class="confirm-btn cancel" id="confirmCancel">取消</button>
+      <button class="confirm-btn ok"     id="confirmOk">刪除</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ════════ DATA ════════
+let evs = JSON.parse(localStorage.getItem('cal_v4') || '[]');
+const persist = () => localStorage.setItem('cal_v4', JSON.stringify(evs));
+
+const TD = new Date();
+let cur = { y: TD.getFullYear(), m: TD.getMonth() };
+let selDate = toS(TD);
+let editId = null;
+let selCal = 'work';
+let selSticker = '';
+let activeFilter = 'all';
+let curView = 'month';
+// Week view state
+let weekOffset = 0; // weeks from today's week
+
+// ════════ HELPERS ════════
+function toS(d) { return d.getFullYear()+'-'+p2(d.getMonth()+1)+'-'+p2(d.getDate()); }
+function p2(n) { return String(n).padStart(2,'0'); }
+function todS() { return toS(TD); }
+
+const DOW = ['日','一','二','三','四','五','六'];
+const MONTHS = ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];
+const RL = { none:'', daily:'每天', weekly:'每週', monthly:'每月', yearly:'每年' };
+// 分類設定（支援自訂，儲存於 localStorage）
+const CAL_DEFAULTS = {
+  work:     { icon:'💼', name:'工作',  color:'#3478f6' },
+  family:   { icon:'🏠', name:'家庭',  color:'#30d158' },
+  personal: { icon:'⭐', name:'個人',  color:'#ff9f0a' },
+  health:   { icon:'❤️', name:'健康',  color:'#ff6b6b' },
+  hobby:    { icon:'🎨', name:'興趣',  color:'#bf5af2' },
+};
+let calCfg = JSON.parse(localStorage.getItem('cal_cfg') || 'null') || JSON.parse(JSON.stringify(CAL_DEFAULTS));
+const persistCal = () => localStorage.setItem('cal_cfg', JSON.stringify(calCfg));
+
+// 動態生成 CAL_COLORS / CAL_NAMES（用於其他地方引用）
+const CAL_COLORS = new Proxy({}, { get: (_, k) => calCfg[k]?.color || '#3478f6' });
+const CAL_NAMES  = new Proxy({}, { get: (_, k) => calCfg[k]?.name || k });
+
+function applyCal() {
+  // 更新 CSS 變數
+  const root = document.documentElement;
+  Object.keys(calCfg).forEach(k => root.style.setProperty(`--cal-${k}`, calCfg[k].color));
+
+  // 重建 filter 列 chips（全部 + 各分類）
+  const fc = document.getElementById('filterChips');
+  if (fc) {
+    fc.innerHTML = `<div class="f-chip${activeFilter==='all'?' on':''}" data-cal="all" style="${activeFilter==='all'?'background:var(--text);border-color:var(--text)':''}">
+      <div class="dot" style="background:${activeFilter==='all'?'rgba(255,255,255,.5)':'var(--text2)'}"></div>全部</div>`
+    + Object.keys(calCfg).map(k => `<div class="f-chip${activeFilter===k?' on':''}" data-cal="${k}" style="${activeFilter===k?`background:${calCfg[k].color};border-color:${calCfg[k].color}`:''}">
+      <div class="dot" style="background:${activeFilter===k?'rgba(255,255,255,.6)':calCfg[k].color}"></div>
+      <span>${calCfg[k].name}</span></div>`).join('');
+    fc.querySelectorAll('.f-chip').forEach(c => c.addEventListener('click', () => toggleFilter(c)));
+  }
+
+  // 重建 modal 分類選項
+  const tl = document.getElementById('calTypeList');
+  if (tl) {
+    tl.innerHTML = Object.keys(calCfg).map(k =>
+      `<div class="cal-type-opt${selCal===k?' on':''}" data-cal="${k}">
+        <div class="cal-dot" style="background:${calCfg[k].color}"></div>
+        <span class="cal-type-name">${calCfg[k].name}</span>
+      </div>`
+    ).join('');
+    tl.querySelectorAll('.cal-type-opt').forEach(o => o.addEventListener('click', () => setCalType(o.dataset.cal)));
+  }
+}
+
+// ════════ LUNAR ════════
+const LM=['正','二','三','四','五','六','七','八','九','十','冬','臘'];
+const LD=['初一','初二','初三','初四','初五','初六','初七','初八','初九','初十','十一','十二','十三','十四','十五','十六','十七','十八','十九','二十','廿一','廿二','廿三','廿四','廿五','廿六','廿七','廿八','廿九','三十'];
+function lunar(d) {
+  const ref = new Date(2025,0,29);
+  const diff = Math.round((d - ref) / 86400000);
+  const ld = ((diff % 30) + 30) % 30;
+  const lm = (Math.floor(((diff + 210) % 360) / 30) + 5) % 12;
+  return ld === 0 ? LM[lm]+'月' : LD[ld];
+}
+
+// ════════ GET EVENTS ════════
+function getEvs(ds) {
+  const d = new Date(ds + 'T00:00:00');
+  return evs.filter(e => {
+    if (activeFilter !== 'all' && e.cal !== activeFilter) return false;
+    const s = new Date(e.date + 'T00:00:00');
+    if (d < s) return false;
+    if (e.rep === 'none') {
+      // 支援跨日：date <= ds <= endDate
+      const end = new Date((e.endDate || e.date) + 'T00:00:00');
+      return d >= s && d <= end;
+    }
+    if (e.rep === 'daily') return true;
+    if (e.rep === 'weekly') return d.getDay() === s.getDay();
+    if (e.rep === 'monthly') return d.getDate() === s.getDate();
+    if (e.rep === 'yearly') return d.getDate()===s.getDate() && d.getMonth()===s.getMonth();
+    return false;
+  }).sort((a,b)=>(a.st||'').localeCompare(b.st||''));
+}
+
+// ════════ MONTH VIEW ════════
+function renderMonth() {
+  document.getElementById('mLabel').textContent = cur.y + '年 ' + MONTHS[cur.m];
+  const g = document.getElementById('monthGrid');
+  g.innerHTML = '';
+  const first = new Date(cur.y, cur.m, 1).getDay();
+  const days = new Date(cur.y, cur.m+1, 0).getDate();
+  const prevDays = new Date(cur.y, cur.m, 0).getDate();
+
+  // prev month padding
+  for (let i = first-1; i >= 0; i--) {
+    const dd = prevDays - i;
+    const pm = cur.m===0?11:cur.m-1, py = cur.m===0?cur.y-1:cur.y;
+    g.appendChild(mkCell(py+'-'+p2(pm+1)+'-'+p2(dd), dd, true));
+  }
+  for (let d = 1; d <= days; d++) {
+    g.appendChild(mkCell(cur.y+'-'+p2(cur.m+1)+'-'+p2(d), d, false));
+  }
+  const filled = first + days;
+  const rem = filled % 7 === 0 ? 0 : 7 - (filled % 7);
+  for (let i = 1; i <= rem; i++) {
+    const nm = cur.m===11?0:cur.m+1, ny = cur.m===11?cur.y+1:cur.y;
+    g.appendChild(mkCell(ny+'-'+p2(nm+1)+'-'+p2(i), i, true));
+  }
+  renderDayPanel();
+}
+
+function mkCell(ds, n, dim) {
+  const d = new Date(ds + 'T00:00:00');
+  const dow = d.getDay();
+  const isToday = ds === todS();
+  const isSel = ds === selDate;
+  const isCopyMarked = copyPendingDates.includes(ds);
+  const cls = ['day-cell',
+    dim ? 'dim-cell' : '',
+    isToday ? 'today-cell' : '',
+    isSel && !isToday ? 'sel-cell' : '',
+    isCopyMarked ? 'copy-marked-cell' : '',
+    dow===0 ? 'sun-cell' : '',
+    dow===6 ? 'sat-cell' : ''
+  ].filter(Boolean).join(' ');
+
+  const el = document.createElement('div');
+  el.className = cls;
+  el.onclick = () => {
+    if (copySourceId) {
+      toggleCopyDate(ds);
+      return;
+    }
+    selDate = ds;
+    cur.y = d.getFullYear();
+    cur.m = d.getMonth();
+    renderMonth();
+  };
+  el.ondblclick = () => {
+    if (copySourceId) return; // 複製模式不開彈窗
+    selDate = ds; openDayPopup(ds);
+  };
+
+  const dayEvs = getEvs(ds);
+  const lu = lunar(d);
+  const sticker = dayEvs.find(e => e.sticker) ? dayEvs.find(e => e.sticker).sticker : '';
+
+  let tagsHtml = dayEvs.slice(0,3).map(e => {
+    const colorVar = CAL_COLORS[e.cal] || 'var(--cal-work)';
+    if (e.st) {
+      // 時段性：淡背景＋彩色文字
+      return `<div class="ctag timed" style="--ctag-color:${colorVar};--ctag-bg:${colorVar}22">${e.st.slice(0,5)} ${e.title}</div>`;
+    } else {
+      // 全日：實心背景白字
+      return `<div class="ctag" style="background:${colorVar}">${e.title}</div>`;
+    }
+  }).join('');
+  if (dayEvs.length > 3) tagsHtml += `<div class="ctag more">+${dayEvs.length-3}</div>`;
+
+  el.innerHTML = `
+    <div class="dn-wrap"><div class="dn">${n}</div></div>
+    <div class="ln">${lu}</div>
+    <div class="cell-tags">${tagsHtml}</div>
+    ${sticker ? `<div class="cell-sticker">${sticker}</div>` : ''}
+  `;
+  return el;
+}
+
+function renderDayPanel() {
+  const panel = document.getElementById('dayPanel');
+  const d = new Date(selDate + 'T00:00:00');
+  const lu = lunar(d);
+  const dayEvs = getEvs(selDate);
+
+  let rows = '';
+  if (!dayEvs.length) {
+    rows = `<div style="padding:16px 16px 20px;font-size:13px;color:var(--text3);text-align:center">📭 這天沒有事件，點 ＋ 新增！</div>`;
+  } else {
+    rows = dayEvs.map(e => {
+      const col = CAL_COLORS[e.cal] || 'var(--cal-work)';
+      const timeStr = e.st ? (e.st + (e.en?' – '+e.en:'')) : '全天';
+      const bs = [
+        `<span class="badge">${timeStr}</span>`,
+        `<span class="badge">${CAL_NAMES[e.cal]||''}</span>`,
+        e.rep!=='none'?`<span class="badge">🔁${RL[e.rep]}</span>`:'',
+        e.sticker?`<span class="badge">${e.sticker}</span>`:'',
+        e.note?`<span class="badge">📝 ${e.note.slice(0,10)}</span>`:''
+      ].filter(Boolean).join('');
+      return `<div class="sched-ev">
+        <div class="sev-bar" style="background:${col}"></div>
+        <div class="sev-info">
+          <div class="sev-title">${e.title}</div>
+          <div class="sev-meta">${bs}</div>
+        </div>
+        <div class="sev-acts">
+          <button class="smbtn" data-action="edit" data-id="${e.id}">✏️</button>
+          <button class="smbtn" data-action="delete" data-id="${e.id}">🗑</button>
+        </div>
+      </div>`;
+    }).join('');
+  }
+
+  panel.innerHTML = `
+    <div class="dp-head">
+      <div>
+        <span class="dp-title">${d.getMonth()+1}月${d.getDate()}日（${DOW[d.getDay()]}）</span>
+        <span class="dp-lunar" style="margin-left:8px">${lu}</span>
+      </div>
+      <span class="dp-count">${dayEvs.length} 件</span>
+    </div>
+    ${rows}
+  `;
+}
+
+// ════════ WEEK VIEW ════════
+function toMin(t) { const [h,m]=t.split(':').map(Number); return h*60+m; }
+
+function renderWeek() {
+  const container = document.getElementById('weekView');
+  const base = new Date(TD);
+  const mon = new Date(base);
+  mon.setDate(base.getDate() - ((base.getDay()+6)%7) + weekOffset*7);
+
+  const days = [];
+  for (let i = 0; i < 7; i++) {
+    const d = new Date(mon); d.setDate(mon.getDate() + i);
+    days.push(d);
+  }
+
+  // ── 標題列 ──
+  let hdr = `<div class="week-header"><div class="wh-empty" style="border-bottom:1px solid var(--border)"></div>`;
+  days.forEach(d => {
+    const dow = d.getDay();
+    const cls = ['wh-day', toS(d)===todS()?'today-col':'', toS(d)===selDate?'sel-col':'', dow===0?'sun-col':'', dow===6?'sat-col':''].filter(Boolean).join(' ');
+    hdr += `<div class="${cls}" onclick="selDate='${toS(d)}';renderDayPanel()"><div class="wh-dn">${DOW[dow]}</div><div class="wh-num">${d.getDate()}</div></div>`;
+  });
+  hdr += '<div class="wh-scrollbar-pad"></div></div>';
+
+  // ── 全日事件列 ──
+  let alldayRow = `<div class="allday-row"><div class="allday-label">全日</div>`;
+  days.forEach(d => {
+    const ds = toS(d);
+    const allDayEvs = getEvs(ds).filter(e => !e.st);
+    let cells = allDayEvs.map(e => {
+      const col = CAL_COLORS[e.cal] || 'var(--cal-work)';
+      return `<div class="allday-ev" style="background:${col}" data-action="edit" data-id="${e.id}">${e.sticker?e.sticker+' ':''}${e.title}</div>`;
+    }).join('');
+    alldayRow += `<div class="allday-cell">${cells}</div>`;
+  });
+  alldayRow += '<div class="wh-scrollbar-pad"></div></div>';
+
+  // ── 時間軸 ──
+  const HOUR_H = 52, START_H = 6, END_H = 22;
+  const hours = [];
+  for (let h = START_H; h <= END_H; h++) hours.push(h);
+
+  let body = '<div class="week-body"><div class="time-col">';
+  hours.forEach(h => { body += `<div class="time-slot">${h}:00</div>`; });
+  body += '</div>';
+
+  days.forEach(d => {
+    const ds = toS(d);
+    const timedEvs = getEvs(ds).filter(e => e.st);
+
+    // 碰撞分組
+    const cols = [];
+    timedEvs.forEach(e => {
+      const eStart = toMin(e.st);
+      const eEnd = e.en ? toMin(e.en) : eStart + 60;
+      let placed = false;
+      for (let ci = 0; ci < cols.length; ci++) {
+        const last = cols[ci][cols[ci].length-1];
+        const lastEnd = last.en ? toMin(last.en) : toMin(last.st)+60;
+        if (eStart >= lastEnd) { cols[ci].push(e); placed = true; break; }
+      }
+      if (!placed) cols.push([e]);
+    });
+    const totalCols = cols.length || 1;
+
+    body += '<div class="day-col">';
+    hours.forEach(h => { body += `<div class="week-slot" onclick="selDate='${ds}';openModal()"></div>`; });
+
+    cols.forEach((colEvs, ci) => {
+      colEvs.forEach(e => {
+        const [sh, sm] = e.st.split(':').map(Number);
+        const [eh, em] = e.en ? e.en.split(':').map(Number) : [sh+1, sm];
+        const topPx = (sh*60+sm - START_H*60) / 60 * HOUR_H;
+        const heightPx = Math.max(((eh*60+em)-(sh*60+sm)) / 60 * HOUR_H, 20);
+        if (topPx < 0 || topPx > (END_H-START_H)*HOUR_H) return;
+        const col = CAL_COLORS[e.cal] || 'var(--cal-work)';
+        const w = 100 / totalCols;
+        body += `<div class="week-ev" style="background:${col};top:${topPx}px;height:${heightPx}px;left:calc(${ci*w}% + 1px);width:calc(${w}% - 2px)" data-action="edit" data-id="${e.id}">
+          <div style="font-size:8px;opacity:.85;line-height:1.2">${e.st}${e.en?'–'+e.en:''}</div>
+          <div style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${e.sticker?e.sticker+' ':''}${e.title}</div>
+        </div>`;
+      });
+    });
+    body += '</div>';
+  });
+  body += '</div>';
+
+  container.innerHTML = `
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 16px;background:var(--white);border-bottom:1px solid var(--border);flex-shrink:0">
+      <button onclick="weekOffset--;renderWeek()" style="border:1px solid var(--border);border-radius:8px;padding:6px 12px;background:transparent;cursor:pointer;font-size:13px">‹ 上週</button>
+      <span style="font-size:13px;font-weight:700;color:var(--text2)">${days[0].getMonth()+1}/${days[0].getDate()} – ${days[6].getMonth()+1}/${days[6].getDate()}</span>
+      <button onclick="weekOffset++;renderWeek()" style="border:1px solid var(--border);border-radius:8px;padding:6px 12px;background:transparent;cursor:pointer;font-size:13px">下週 ›</button>
+    </div>
+    ${hdr}
+    ${alldayRow}
+    <div class="week-scroll-container">${body}</div>
+  `;
+}
+
+// ════════ SCHEDULE LIST ════════
+function renderList() {
+  const sv = document.getElementById('schedView');
+
+  // 展開所有事件（過去 365 天 + 未來 180 天）
+  const rangeStart = new Date(todS() + 'T00:00:00');
+  rangeStart.setDate(rangeStart.getDate() - 365);
+  const rangeEnd = new Date(todS() + 'T00:00:00');
+  rangeEnd.setDate(rangeEnd.getDate() + 180);
+
+  const instances = [];
+  evs.forEach(e => {
+    if (activeFilter !== 'all' && e.cal !== activeFilter) return;
+    const start = new Date(e.date + 'T00:00:00');
+
+    if (e.rep === 'none') {
+      const d = new Date(e.date + 'T00:00:00');
+      const endD = new Date((e.endDate || e.date) + 'T00:00:00');
+      // 跨日事件：只在開始日期顯示一次（在範圍內即顯示）
+      if (endD >= rangeStart && d <= rangeEnd) instances.push({ ...e, _ds: e.date });
+      return;
+    }
+
+    // 重複事件展開
+    const cur = new Date(Math.max(start, rangeStart));
+    while (cur <= rangeEnd) {
+      const ds = toS(cur);
+      const d = new Date(ds + 'T00:00:00');
+      let match = false;
+      if (e.rep === 'daily') match = true;
+      else if (e.rep === 'weekly')  match = d.getDay() === start.getDay();
+      else if (e.rep === 'monthly') match = d.getDate() === start.getDate();
+      else if (e.rep === 'yearly')  match = d.getDate() === start.getDate() && d.getMonth() === start.getMonth();
+      if (match) instances.push({ ...e, _ds: ds });
+      cur.setDate(cur.getDate() + 1);
+    }
+  });
+
+  instances.sort((a, b) => {
+    const dc = a._ds.localeCompare(b._ds);
+    return dc !== 0 ? dc : (a.st || '').localeCompare(b.st || '');
+  });
+
+  if (!instances.length) {
+    sv.innerHTML = '<div style="padding:40px;text-align:center;color:var(--text3);font-size:14px">還沒有事件<br><br>點右上角 ＋ 新增第一個事件！</div>';
+    return;
+  }
+
+  let lastM = '', lastD = '', html = '';
+  instances.forEach(e => {
+    const d = new Date(e._ds + 'T00:00:00');
+    const mk = `${d.getFullYear()}年${d.getMonth()+1}月`;
+    if (mk !== lastM) { html += `<div class="sched-month">${mk}</div>`; lastM = mk; }
+    if (e._ds !== lastD) {
+      const dow = d.getDay();
+      const dc = dow===0?'s':dow===6?'sa':'';
+      const isToday = e._ds === todS();
+      html += `<div class="sched-day-hd"${isToday?' data-today':''}>
+        <span class="sched-day-num ${dc}">${d.getDate()}</span>
+        <span class="sched-day-dow">${DOW[dow]}</span>
+        <span class="sched-day-lunar">${lunar(d)}</span>
+        ${isToday ? '<span style="font-size:11px;font-weight:800;color:#fff;background:var(--text);border-radius:6px;padding:1px 6px;margin-left:4px">今天</span>' : ''}
+      </div>`;
+      lastD = e._ds;
+    }
+    const col = CAL_COLORS[e.cal] || 'var(--cal-work)';
+    const isMultiDay = e.endDate && e.endDate !== e.date;
+    const timeStr = e.st
+      ? (e.st + (e.en?' – '+e.en:'')) + (isMultiDay ? ` (至${e.endDate.slice(5).replace('-','/')})` : '')
+      : (isMultiDay ? `全天 ${e.date.slice(5).replace('-','/')} – ${e.endDate.slice(5).replace('-','/')}` : '全天');
+    html += `<div class="sched-ev">
+      <div class="sev-bar" style="background:${col}"></div>
+      <div class="sev-info">
+        <div class="sev-title">${e.sticker?e.sticker+' ':''}${e.title}</div>
+        <div class="sev-meta">
+          <span class="badge">${timeStr}</span>
+          <span class="badge">${CAL_NAMES[e.cal]||''}</span>
+          ${e.rep!=='none'?`<span class="badge">🔁${RL[e.rep]}</span>`:''}
+          ${e.note?`<span class="badge">📝</span>`:''}
+        </div>
+      </div>
+      <div class="sev-acts">
+        <button class="smbtn" data-action="edit" data-id="${e.id}">✏️</button>
+        <button class="smbtn" data-action="delete" data-id="${e.id}">🗑</button>
+      </div>
+    </div>`;
+  });
+  sv.innerHTML = html;
+
+  // 捲動到今天
+  setTimeout(() => {
+    const todayEl = sv.querySelector('[data-today]');
+    if (todayEl) todayEl.scrollIntoView({ block: 'start', behavior: 'smooth' });
+  }, 50);
+}
+
+// ════════ NAVIGATION ════════
+function chM(d) {
+  cur.m += d;
+  if (cur.m < 0) { cur.m = 11; cur.y--; }
+  if (cur.m > 11) { cur.m = 0; cur.y++; }
+  renderMonth();
+}
+function goToday() {
+  cur.y = TD.getFullYear(); cur.m = TD.getMonth();
+  selDate = todS(); weekOffset = 0;
+  renderAll();
+}
+function renderAll() {
+  if (curView === 'month') renderMonth();
+  else if (curView === 'week') renderWeek();
+  else if (curView === 'list') renderList();
+}
+
+function switchView(v, btn) {
+  curView = v;
+  document.querySelectorAll('.bn').forEach(b => b.classList.remove('on'));
+  btn.classList.add('on');
+  document.querySelectorAll('.view').forEach(el => el.classList.remove('active'));
+  if (v === 'month') { document.getElementById('viewMonth').classList.add('active'); renderMonth(); }
+  else if (v === 'week') { document.getElementById('viewWeek').classList.add('active'); renderWeek(); }
+  else if (v === 'list') { document.getElementById('viewList').classList.add('active'); renderList(); }
+  else { document.getElementById('viewMonth').classList.add('active'); renderMonth(); }
+}
+
+// ════════ FILTER ════════
+function toggleFilter(el) {
+  const cal = el.dataset.cal;
+  activeFilter = cal;
+  document.querySelectorAll('.f-chip').forEach(c => {
+    const isOn = c.dataset.cal === cal;
+    c.classList.toggle('on', isOn);
+    if (isOn) {
+      if (cal === 'all') { c.style.background = 'var(--text)'; c.style.borderColor = 'var(--text)'; }
+      else { c.style.background = CAL_COLORS[cal]||'var(--text)'; c.style.borderColor = CAL_COLORS[cal]||'var(--text)'; }
+    } else { c.style.background = ''; c.style.borderColor = ''; }
+  });
+  renderAll();
+}
+
+// ════════ MODAL ════════
+function openModal(id = null) {
+  editId = id;
+  document.getElementById('msTitle').textContent = id ? '編輯事件' : '新增事件';
+  if (id) {
+    const e = evs.find(x => x.id === id);
+    document.getElementById('fTitle').value = e.title;
+    document.getElementById('fDate').value = e.date;
+    document.getElementById('fStart').value = e.st || '';
+    document.getElementById('fEnd').value = e.en || '';
+    document.getElementById('fRepeat').value = e.rep;
+    document.getElementById('fRemind').value = e.rm;
+    document.getElementById('fNote').value = e.note || '';
+    setCalType(e.cal);
+    setSticker(e.sticker || '');
+    const isAllDay = !e.st;
+    document.getElementById('fAllDay').checked = isAllDay;
+    toggleAllDay(isAllDay);
+    const ed = e.endDate || e.date;
+    document.getElementById('fEndDate').value = ed;
+  } else {
+    document.getElementById('fTitle').value = '';
+    document.getElementById('fDate').value = selDate;
+    document.getElementById('fEndDate').value = selDate;
+    document.getElementById('fStart').value = '';
+    document.getElementById('fEnd').value = '';
+    document.getElementById('fRepeat').value = 'none';
+    document.getElementById('fRemind').value = 'none';
+    document.getElementById('fNote').value = '';
+    document.getElementById('fAllDay').checked = false;
+    toggleAllDay(false);
+    setCalType('work');
+    setSticker('');
+  }
+  document.getElementById('overlay').classList.add('open');
+}
+function closeModal() { document.getElementById('overlay').classList.remove('open'); editId = null; }
+function ovClick(e) { if (e.target === document.getElementById('overlay')) closeModal(); }
+
+function setCalType(cal) {
+  selCal = cal;
+  document.querySelectorAll('.cal-type-opt').forEach(o => o.classList.toggle('on', o.dataset.cal === cal));
+}
+
+
+// ════════ 分類編輯器 ════════
+const CAL_PALETTE = ['#3478f6','#30d158','#ff9f0a','#ff6b6b','#bf5af2','#ff375f','#5ac8fa','#34c759','#ff9500','#af52de','#00c7be','#636366'];
+
+let editingCal = null;
+let editorSelColor = '';
+let calCfgDraft = {}; // 暫存草稿，按儲存才寫入
+
+function openCalEditor(key) {
+  // 開啟時複製一份 draft
+  calCfgDraft = JSON.parse(JSON.stringify(calCfg));
+  document.getElementById('calEditorMask').classList.add('open');
+  fillCalEditor(key);
+}
+
+function saveDraftCurrent() {
+  // 將目前欄位值存入 draft（僅在最終儲存前呼叫）
+  if (!editingCal || !calCfgDraft[editingCal]) return;
+  const n = document.getElementById('calNameInput').value.trim();
+  calCfgDraft[editingCal].name = n || calCfgDraft[editingCal].name;
+  calCfgDraft[editingCal].color = editorSelColor;
+}
+
+function fillCalEditor(key) {
+  if (!calCfgDraft[key]) key = Object.keys(calCfgDraft)[0];
+  editingCal = key;
+  const cfg = calCfgDraft[key];
+  editorSelColor = cfg.color;
+
+  // 左側分類清單
+  const list = document.getElementById('calEditorList');
+  list.innerHTML = Object.keys(calCfgDraft).map(k => {
+    const c = calCfgDraft[k];
+    return `<button class="cal-list-item${k===key?' on':''}" data-calkey="${k}">
+      <span class="cal-list-dot" style="background:${c.color}"></span>${c.name}
+    </button>`;
+  }).join('');
+  list.querySelectorAll('.cal-list-item').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (btn.dataset.calkey !== editingCal) {
+        fillCalEditor(btn.dataset.calkey);
+      }
+    });
+  });
+
+  // 新增按鈕上限提示
+  const addBtn = document.getElementById('addCalBtn');
+  const atLimit = Object.keys(calCfgDraft).length >= 10;
+  addBtn.disabled = atLimit;
+  addBtn.textContent = atLimit ? '已達上限（10個）' : '＋ 新增分類';
+  addBtn.style.opacity = atLimit ? '0.4' : '1';
+  addBtn.style.cursor = atLimit ? 'not-allowed' : 'pointer';
+
+  const nameInp = document.getElementById('calNameInput');
+  nameInp.value = cfg.name;
+  nameInp.oninput = () => {};
+
+  // 刪除按鈕
+  const delBtn = document.getElementById('calDelBtn');
+  delBtn.style.display = Object.keys(calCfgDraft).length > 1 ? 'block' : 'none';
+  delBtn.onclick = () => deleteCalCategory(editingCal);
+
+  // 顏色格
+  const row = document.getElementById('calColorRow');
+  row.innerHTML = CAL_PALETTE.map(c =>
+    `<div class="cal-color-opt${c===editorSelColor?' on':''}" data-color="${c}" style="background:${c}"></div>`
+  ).join('');
+  row.querySelectorAll('.cal-color-opt').forEach(el => {
+    el.addEventListener('click', () => {
+      editorSelColor = el.dataset.color;
+      row.querySelectorAll('.cal-color-opt').forEach(x => x.classList.remove('on'));
+      el.classList.add('on');
+      document.getElementById('calColorPicker').value = editorSelColor;
+    });
+  });
+
+  // 調色盤
+  const picker = document.getElementById('calColorPicker');
+  picker.value = editorSelColor;
+  picker.oninput = null;
+  picker.oninput = () => {
+    editorSelColor = picker.value;
+    row.querySelectorAll('.cal-color-opt').forEach(x => x.classList.remove('on'));
+  };
+}
+
+function addCalCategory() {
+  if (Object.keys(calCfgDraft).length >= 10) { toast('分類最多10個'); return; }
+  const newKey = 'cat_' + Date.now();
+  const colors = ['#3478f6','#30d158','#ff9f0a','#ff6b6b','#bf5af2','#ff375f','#5ac8fa'];
+  const usedColors = Object.values(calCfgDraft).map(c => c.color);
+  const color = colors.find(c => !usedColors.includes(c)) || colors[Math.floor(Math.random()*colors.length)];
+  calCfgDraft[newKey] = { icon:'', name:'新分類', color };
+  fillCalEditor(newKey);
+  const inp = document.getElementById('calNameInput');
+  inp.focus(); inp.select();
+}
+
+function deleteCalCategory(key) {
+  if (Object.keys(calCfgDraft).length <= 1) { toast('至少保留一個分類'); return; }
+  const fallback = Object.keys(calCfgDraft).find(k => k !== key);
+  delete calCfgDraft[key];
+  fillCalEditor(fallback);
+}
+
+function closeCalEditor() {
+  document.getElementById('calEditorMask').classList.remove('open');
+  editingCal = null;
+  calCfgDraft = {};
+}
+
+function saveCalEditor() {
+  saveDraftCurrent(); // 先存目前欄位到 draft
+  // 把 draft 中被刪除的分類，將其事件移到第一個存在的分類
+  const draftKeys = Object.keys(calCfgDraft);
+  evs.forEach(e => { if (!calCfgDraft[e.cal]) e.cal = draftKeys[0]; });
+  persist();
+  calCfg = calCfgDraft;
+  persistCal();
+  applyCal();
+  // 確認 selCal 仍有效
+  if (!calCfg[selCal]) selCal = Object.keys(calCfg)[0];
+  document.getElementById('calEditorMask').classList.remove('open');
+  editingCal = null;
+  calCfgDraft = {};
+  renderMonth();
+  if (curView === 'list') renderList();
+  if (curView === 'week') renderWeek();
+  toast('✅ 分類已儲存');
+}
+
+// 點遮罩關閉
+document.getElementById('calEditorMask').addEventListener('click', function(e) {
+  if (e.target === this) closeCalEditor();
+});
+document.querySelector('.cal-editor-sheet').addEventListener('click', function(e) {
+  e.stopPropagation();
+});
+
+function setSticker(s) {
+  selSticker = s;
+  document.querySelectorAll('.sticker-opt').forEach(o => o.classList.toggle('on', o.dataset.s === s));
+}
+document.querySelectorAll('.sticker-opt').forEach(o => {
+  o.addEventListener('click', () => setSticker(o.dataset.s));
+});
+
+function saveEvent() {
+  const title = document.getElementById('fTitle').value.trim();
+  if (!title) { toast('請輸入標題！'); return; }
+  const date = document.getElementById('fDate').value;
+  if (!date) { toast('請選擇日期！'); return; }
+
+  const isAllDay = document.getElementById('fAllDay').checked;
+  const rawEndDate = document.getElementById('fEndDate').value;
+  const endDate = (rawEndDate && rawEndDate >= date) ? rawEndDate : date;
+
+  const ev = {
+    id: editId || Date.now().toString(),
+    title, date,
+    endDate,
+    st: document.getElementById('fStart').value,
+    en: document.getElementById('fEnd').value,
+    cal: selCal,
+    rep: document.getElementById('fRepeat').value,
+    rm: document.getElementById('fRemind').value,
+    note: document.getElementById('fNote').value.trim(),
+    sticker: selSticker
+  };
+
+  if (editId) { const i = evs.findIndex(x => x.id === editId); evs[i] = ev; toast('✅ 已更新！'); }
+  else { evs.push(ev); toast('✅ 已新增！'); }
+
+  persist();
+  selDate = date;
+  cur.y = parseInt(date.split('-')[0]);
+  cur.m = parseInt(date.split('-')[1]) - 1;
+  renderAll();
+  schedRem();
+
+  // 關閉編輯 modal
+  document.getElementById('overlay').classList.remove('open');
+  editId = null;
+
+  // 如果是從日視窗進來的，重新開啟日視窗顯示更新後的行程
+  if (currentPopupDs) {
+    openDayPopup(currentPopupDs);
+  }
+}
+
+// ════════ 自訂確認對話框 ════════
+let pendingDeleteId = null;
+
+function showConfirm(id, title) {
+  pendingDeleteId = id;
+  const msg = document.getElementById('confirmMsg');
+  msg.textContent = `確定要刪除「${title}」嗎？`;
+  document.getElementById('confirmMask').classList.add('open');
+}
+
+function openSettingsModal() {
+  const el = document.getElementById('settingsOverlay');
+  el.style.display = 'flex';
+  refreshGcalUI(); // 每次開啟都刷新連結狀態
+}
+function closeSettingsModal() {
+  document.getElementById('settingsOverlay').style.display = 'none';
+}
+// 點遮罩關閉設定
+document.getElementById('settingsOverlay').addEventListener('click', function(e) {
+  if (e.target === this) closeSettingsModal();
+});
+
+// ════════ Google 日曆 OAuth ════════
+// ⚠️  請將下方 YOUR_CLIENT_ID 換成你在 Google Cloud Console 申請的 OAuth 2.0 Client ID
+const GCAL_CLIENT_ID = 'YOUR_CLIENT_ID';
+const GCAL_SCOPE = 'https://www.googleapis.com/auth/calendar.readonly https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile';
+
+function connectGoogleCalendar() {
+  if (GCAL_CLIENT_ID === 'YOUR_CLIENT_ID') {
+    toast('⚠️ 請先填入 Google Client ID');
+    return;
+  }
+  const params = new URLSearchParams({
+    client_id: GCAL_CLIENT_ID,
+    redirect_uri: location.origin + location.pathname,
+    response_type: 'token',
+    scope: GCAL_SCOPE,
+    prompt: 'select_account',
+  });
+  location.href = 'https://accounts.google.com/o/oauth2/v2/auth?' + params;
+}
+
+function disconnectGoogleCalendar() {
+  localStorage.removeItem('gcal_token');
+  localStorage.removeItem('gcal_user');
+  refreshGcalUI();
+  toast('已斷開 Google 日曆連結');
+}
+
+function refreshGcalUI() {
+  const user = JSON.parse(localStorage.getItem('gcal_user') || 'null');
+  const dis = document.getElementById('gcal-disconnected');
+  const con = document.getElementById('gcal-connected');
+  if (user) {
+    document.getElementById('gcal-name').textContent  = user.name  || '';
+    document.getElementById('gcal-email').textContent = user.email || '';
+    // 頭像：有圖片用圖片，否則用名字首字
+    const av = document.getElementById('gcal-avatar');
+    if (user.picture) {
+      av.innerHTML = `<img src="${user.picture}" style="width:36px;height:36px;border-radius:50%;object-fit:cover">`;
+    } else {
+      av.textContent = (user.name || 'G')[0].toUpperCase();
+    }
+    dis.style.display = 'none';
+    con.style.display = '';
+  } else {
+    dis.style.display = '';
+    con.style.display = 'none';
+  }
+}
+
+// OAuth 回調：解析 URL hash 中的 access_token
+(function handleOAuthCallback() {
+  const hash = location.hash;
+  if (!hash.includes('access_token')) return;
+  const params = new URLSearchParams(hash.slice(1));
+  const token = params.get('access_token');
+  if (!token) return;
+  history.replaceState(null, '', location.pathname); // 清除 hash
+  localStorage.setItem('gcal_token', token);
+  // 取得使用者資訊
+  fetch('https://www.googleapis.com/oauth2/v3/userinfo', {
+    headers: { Authorization: 'Bearer ' + token }
+  })
+  .then(r => r.json())
+  .then(info => {
+    localStorage.setItem('gcal_user', JSON.stringify({
+      name:    info.name,
+      email:   info.email,
+      picture: info.picture,
+    }));
+    openSettingsModal();
+    toast('✅ 已連結 ' + info.email);
+  })
+  .catch(() => toast('⚠️ 無法取得帳號資訊'));
+})();
+
+function setupConfirmDialog() {
+  document.getElementById('confirmOk').addEventListener('click', () => {
+    document.getElementById('confirmMask').classList.remove('open');
+    if (!pendingDeleteId) return;
+    const id = pendingDeleteId;
+    pendingDeleteId = null;
+    doDelete(id);
+  });
+  document.getElementById('confirmCancel').addEventListener('click', () => {
+    document.getElementById('confirmMask').classList.remove('open');
+    pendingDeleteId = null;
+  });
+}
+
+function doDelete(id) {
+  evs = evs.filter(e => e.id !== id);
+  persist();
+  toast('🗑 已刪除');
+  renderMonth();
+  renderDayPanel();
+  if (curView === 'list') renderList();
+  if (curView === 'week') renderWeek();
+  if (currentPopupDs) {
+    renderDayPopupContent(currentPopupDs);
+    if (!getEvs(currentPopupDs).length) closeDayPopup();
+  }
+}
+
+function deleteEvent(id) {
+  const ev = evs.find(e => e.id === id);
+  const title = ev ? ev.title : '此行程';
+  showConfirm(id, title);
+}
+
+const delEv = deleteEvent;
+const delEvAndRefresh = deleteEvent;
+const delEvFromList = deleteEvent;
+
+// ════════ 複製模式 ════════
+let copySourceId = null;
+let copyPendingDates = []; // 要貼上的日期清單
+
+function startCopyMode(id) {
+  copySourceId = id;
+  copyPendingDates = [];
+  const banner = document.getElementById('copyBanner');
+  banner.style.display = 'flex';
+  document.getElementById('copyCount').textContent = '0';
+  // 關閉日視窗，回到月曆
+  closeDayPopup();
+  switchView('month', document.getElementById('bn-month'));
+  toast('📋 點選日期格子貼上，完成後按儲存');
+}
+
+function toggleCopyDate(ds) {
+  const idx = copyPendingDates.indexOf(ds);
+  if (idx >= 0) {
+    copyPendingDates.splice(idx, 1); // 取消貼上
+  } else {
+    copyPendingDates.push(ds); // 加入貼上
+  }
+  document.getElementById('copyCount').textContent = copyPendingDates.length;
+  renderMonth(); // 重繪格子顯示標記
+}
+
+function saveCopyMode() {
+  if (!copySourceId) { cancelCopyMode(); return; }
+  if (!copyPendingDates.length) { toast('請先點選要貼上的日期'); return; }
+  const src = evs.find(e => e.id === copySourceId);
+  if (!src) { cancelCopyMode(); return; }
+  const n = copyPendingDates.length;
+  copyPendingDates.forEach(ds => {
+    evs.push({ ...src, id: Date.now().toString() + Math.random().toString(36).slice(2), date: ds, endDate: ds });
+  });
+  persist();
+  const saved = n;
+  cancelCopyMode();
+  renderAll();
+  toast(`✅ 已複製到 ${saved} 個日期`);
+}
+
+function cancelCopyMode() {
+  copySourceId = null;
+  copyPendingDates = [];
+  document.getElementById('copyBanner').style.display = 'none';
+  renderMonth();
+}
+
+// ════════ 全域事件委派（掛在 document，永久有效）════════
+document.addEventListener('click', function(e) {
+  const btn = e.target.closest('[data-action]');
+  if (!btn) return;
+  const action = btn.dataset.action;
+  const id = (btn.dataset.id || '').trim();
+  if (!id) return;
+  if (action === 'edit')   { openModal(id); }
+  if (action === 'delete') { deleteEvent(id); }
+  if (action === 'copy')   { startCopyMode(id); }
+});
+
+function toggleAllDay(isAllDay) {
+  const timeRow = document.getElementById('timeRow');
+  if (isAllDay) {
+    timeRow.style.display = 'none';
+    document.getElementById('fStart').value = '';
+    document.getElementById('fEnd').value = '';
+  } else {
+    timeRow.style.display = '';
+  }
+}
+
+function showSearch() { toast('🔍 搜尋功能即將推出'); }
+
+// ════════ REMINDERS ════════
+function schedRem() {
+  if (!('Notification' in window)) return;
+  if (Notification.permission === 'default') Notification.requestPermission();
+  const now = new Date();
+  evs.forEach(e => {
+    if (e.rm === 'none' || !e.st) return;
+    const dt = new Date(e.date + 'T' + e.st + ':00');
+    const rd = new Date(dt - parseInt(e.rm) * 60000);
+    const diff = rd - now;
+    if (diff > 0 && diff < 86400000) {
+      setTimeout(() => {
+        if (Notification.permission === 'granted')
+          new Notification('📅 ' + e.title, { body: (e.sticker?e.sticker+' ':'') + e.st + ' 的行程即將開始' });
+      }, diff);
+    }
+  });
+}
+
+// ════════ DAY POPUP ════════
+let currentPopupDs = '';
+
+function openDayPopup(ds) {
+  selDate = ds;
+  currentPopupDs = ds;
+  const d = new Date(ds + 'T00:00:00');
+  const lu = lunar(d);
+  const dow = d.getDay();
+  const dowNames = ['日','一','二','三','四','五','六'];
+
+  document.getElementById('dpDateBig').textContent =
+    `${d.getMonth()+1}月${d.getDate()}日（${dowNames[dow]}）`;
+  document.getElementById('dpDateSub').textContent =
+    `農曆 ${lu}　• ${d.getFullYear()}年`;
+
+  renderDayPopupContent(ds);
+  document.getElementById('dayOverlay').classList.add('open');
+}
+
+function renderDayPopupContent(ds) {
+  const dayEvs = getEvs(ds);
+  const scroll = document.getElementById('dpScroll');
+
+  if (!dayEvs.length) {
+    scroll.innerHTML = `<div class="dp-no-ev">📭 這天還沒有行程<br><span style="font-size:12px">點上方「＋ 新增」加入事件</span></div>`;
+    return;
+  }
+
+  scroll.innerHTML = dayEvs.map(e => {
+    const col = CAL_COLORS[e.cal] || 'var(--cal-work)';
+    const timeStr = e.st ? (e.st + (e.en ? ' – ' + e.en : '')) : '全天';
+    const badges = [
+      `<span class="dp-badge">${CAL_NAMES[e.cal]||''}</span>`,
+      e.rep !== 'none' ? `<span class="dp-badge">🔁 ${RL[e.rep]}</span>` : '',
+      e.rm !== 'none' ? `<span class="dp-badge">🔔 提醒</span>` : '',
+    ].filter(Boolean).join('');
+    return `<div class="dp-ev-item" data-id="${e.id}">
+      <div class="dp-ev-bar" style="background:${col}"></div>
+      <div class="dp-ev-body">
+        <div class="dp-ev-title">${e.sticker ? e.sticker + ' ' : ''}${e.title}</div>
+        <div class="dp-ev-time">🕐 ${timeStr}</div>
+        ${e.note ? `<div class="dp-ev-note">📝 ${e.note}</div>` : ''}
+        <div class="dp-ev-badges">${badges}</div>
+      </div>
+      <div class="dp-ev-acts">
+        <button class="dp-btn" data-action="copy" data-id="${e.id}">📋</button>
+        <button class="dp-btn" data-action="edit" data-id="${e.id}">✏️</button>
+        <button class="dp-btn" data-action="delete" data-id="${e.id}">🗑</button>
+      </div>
+    </div>`;
+  }).join('');
+
+}
+
+function editFromPopup(id) {
+  // 直接開啟編輯 modal，疊在日視窗上面（z-index: 500 > 400）
+  openModal(id);
+}
+
+function openModalFromPopup() {
+  // 從日視窗新增事件，保留日視窗在背後
+  openModal();
+}
+
+function delEvFromPopup(id, ds) {
+  deleteEvent(id);
+}
+
+function closeDayPopup() {
+  document.getElementById('dayOverlay').classList.remove('open');
+  currentPopupDs = '';
+  renderMonth();
+}
+
+function setupOverlayClose() {
+  // 點擊 overlay 背景（非 popup 內部）才關閉
+  document.getElementById('dayOverlay').addEventListener('click', function(e) {
+    if (!e.target.closest('.day-popup')) {
+      closeDayPopup();
+    }
+  });
+}
+
+// ════════ TOAST ════════
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2200);
+}
+
+// ════════ INIT ════════
+setupConfirmDialog();
+setupOverlayClose();
+applyCal();
+renderMonth();
+schedRem();
+
+// 量測 scrollbar 寬度並設定 CSS 變數
+(function() {
+  const el = document.createElement('div');
+  el.style.cssText = 'position:absolute;top:-9999px;width:50px;height:50px;overflow:scroll';
+  document.body.appendChild(el);
+  const w = el.offsetWidth - el.clientWidth;
+  document.documentElement.style.setProperty('--scrollbar-w', (w || 8) + 'px');
+  document.body.removeChild(el);
+})();
+
+
+
+// ════════ SERVICE WORKER 註冊 ════════
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js')
+      .then(() => console.log('✅ SW ready'))
+      .catch(e => console.warn('SW skipped:', e.message));
+  });
+}
+
+// PWA 安裝提示
+let _deferredPrompt;
+window.addEventListener('beforeinstallprompt', e => {
+  e.preventDefault();
+  _deferredPrompt = e;
+  const b = document.createElement('div');
+  b.id = 'pwa-banner';
+  b.style.cssText = 'position:fixed;bottom:70px;left:50%;transform:translateX(-50%);width:calc(100% - 32px);max-width:460px;background:#1a1a2e;color:#fff;padding:12px 14px;border-radius:16px;display:flex;align-items:center;gap:10px;z-index:9999;box-shadow:0 4px 20px rgba(0,0,0,.35);';
+  b.innerHTML = `<span style="font-size:22px">📲</span><div style="flex:1"><div style="font-weight:800;font-size:13px">安裝築夢點滴</div><div style="font-size:11px;opacity:.8">加入主畫面，離線也能使用</div></div><button onclick="(async()=>{if(_deferredPrompt){_deferredPrompt.prompt();await _deferredPrompt.userChoice;_deferredPrompt=null;}document.getElementById('pwa-banner').remove()})()" style="padding:8px 14px;border-radius:10px;background:#fff;color:#1a1a2e;border:none;font-weight:800;font-size:12px;cursor:pointer;font-family:inherit">安裝</button><button onclick="this.closest('#pwa-banner').remove()" style="padding:8px;border-radius:10px;background:rgba(255,255,255,.15);color:#fff;border:none;cursor:pointer">✕</button>`;
+  document.body.appendChild(b);
+});
+
+</script>
+</body>
+</html>
