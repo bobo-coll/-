@@ -1,0 +1,78 @@
+name: 建立 chiku-calendar 儲存庫並開啟 GitHub Pages
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirm:
+        description: '輸入 "yes" 確認執行'
+        required: true
+        default: 'no'
+
+jobs:
+  create-repo-and-pages:
+    runs-on: ubuntu-latest
+    if: github.event.inputs.confirm == 'yes'
+
+    steps:
+      - name: 取得目前儲存庫程式碼
+        uses: actions/checkout@v4
+
+      - name: 建立 chiku-calendar 儲存庫
+        env:
+          GH_TOKEN: ${{ secrets.CHIKU_CALENDAR_PAT }}
+        run: |
+          # 建立新的 public 儲存庫
+          gh repo create bobo-coll/chiku-calendar \
+            --public \
+            --description "個人行事曆 by 柏宏" \
+            || echo "儲存庫可能已存在，繼續執行..."
+
+          echo "✓ 儲存庫已建立（或已存在）"
+
+      - name: 推送程式碼到 chiku-calendar
+        env:
+          GH_TOKEN: ${{ secrets.CHIKU_CALENDAR_PAT }}
+        run: |
+          # 設定 git
+          git config --global user.email "readbobo324@gmail.com"
+          git config --global user.name "bobo-coll"
+
+          # 建立暫存目錄並初始化新 repo
+          mkdir /tmp/chiku-calendar
+          cp index.html sw.js /tmp/chiku-calendar/
+          cd /tmp/chiku-calendar
+
+          git init
+          git add .
+          git commit -m "Add calendar app 築夢點滴"
+          git branch -M main
+          git remote add origin "https://x-access-token:${GH_TOKEN}@github.com/bobo-coll/chiku-calendar.git"
+          git push -u origin main
+
+          echo "✓ 程式碼已推送到 chiku-calendar/main"
+
+      - name: 開啟 GitHub Pages
+        env:
+          GH_TOKEN: ${{ secrets.CHIKU_CALENDAR_PAT }}
+        run: |
+          # 等待儲存庫就緒
+          sleep 5
+
+          # 使用 GitHub API 開啟 Pages
+          curl -f \
+            -X POST \
+            -H "Authorization: token $GH_TOKEN" \
+            -H "Accept: application/vnd.github.v3+json" \
+            https://api.github.com/repos/bobo-coll/chiku-calendar/pages \
+            -d '{"source":{"branch":"main","path":"/"}}' \
+            && echo "✓ GitHub Pages 已開啟" \
+            || echo "GitHub Pages 可能已存在或需要手動在 Settings → Pages 設定"
+
+      - name: 顯示 Pages 網址
+        run: |
+          echo ""
+          echo "==============================="
+          echo "🎉 完成！GitHub Pages 網址："
+          echo "https://bobo-coll.github.io/chiku-calendar/"
+          echo "==============================="
+          echo "注意：Pages 佈建需要 1-5 分鐘，請稍後再訪問。"
