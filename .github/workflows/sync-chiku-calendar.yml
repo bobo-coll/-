@@ -6,6 +6,7 @@ on:
       - claude/setup-chiku-calendar-repo-sCeEv
     paths:
       - index.html
+      - .github/workflows/sync-chiku-calendar.yml
 
 jobs:
   sync:
