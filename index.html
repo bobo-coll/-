@@ -72,7 +72,7 @@ body {
 }
 .nav-btn:active { background: var(--border); }
 .month-label {
-  font-size:16px; font-weight:800; letter-spacing:-.2px; cursor:pointer;
+  font-size:18px; font-weight:800; letter-spacing:-.2px; cursor:pointer;
   min-width:120px; text-align:center;
 }
 .icon-btn {
@@ -141,7 +141,7 @@ body {
   position:sticky; top:0; z-index:50;
 }
 .wd {
-  text-align:center; font-size:10px; font-weight:700;
+  text-align:center; font-size:12px; font-weight:700;
   color:var(--text2); padding:5px 0; letter-spacing:.3px;
 }
 .wd.s { color:var(--sun); }
@@ -169,7 +169,7 @@ body {
 .dn {
   display:inline-flex; align-items:center; justify-content:center;
   width:24px; height:24px; border-radius:50%;
-  font-size:13px; font-weight:500; color:var(--text);
+  font-size:15px; font-weight:500; color:var(--text);
 }
 .day-cell.today-cell .dn {
   background:var(--today-ring); color:#fff; font-weight:800;
@@ -178,13 +178,13 @@ body {
 .day-cell.sat-cell .dn { color:var(--sat); }
 .day-cell.today-cell.sun-cell .dn,
 .day-cell.today-cell.sat-cell .dn { color:#fff; }
-.ln { font-size:8px; color:var(--text3); text-align:center; line-height:1.2; margin-bottom:2px; }
+.ln { font-size:10px; color:var(--text3); text-align:center; line-height:1.2; margin-bottom:2px; }
 
 /* Event tags in cell */
 .cell-tags { display:flex; flex-direction:column; gap:1.5px; }
 .ctag {
-  border-radius:3px; font-size:9px; font-weight:700;
-  color:#fff; padding:1.5px 3px; line-height:13px; height:13px;
+  border-radius:3px; font-size:11px; font-weight:700;
+  color:#fff; padding:1.5px 3px; line-height:15px; height:15px;
   white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
 }
 .ctag.timed {
@@ -192,7 +192,7 @@ body {
   background: var(--ctag-bg, rgba(52,120,246,0.13)) !important;
   font-weight:600;
 }
-.ctag.more { background:var(--text3); text-align:center; font-size:8px; }
+.ctag.more { background:var(--text3); text-align:center; font-size:10px; }
 /* Sticker on cell */
 .cell-sticker {
   position:absolute; top:2px; right:2px;
@@ -219,7 +219,7 @@ body {
 }
 .wh-day:active { background:var(--bg); }
 .wh-dn {
-  font-size:10px; font-weight:700; color:var(--text2);
+  font-size:12px; font-weight:700; color:var(--text2);
   letter-spacing:.2px; margin-bottom:2px;
 }
 .wh-num {
@@ -304,17 +304,17 @@ body {
 .sched-day-num { font-size:26px; font-weight:900; line-height:1; }
 .sched-day-num.s { color:var(--sun); }
 .sched-day-num.sa { color:var(--sat); }
-.sched-day-dow { font-size:12px; color:var(--text2); font-weight:600; }
-.sched-day-lunar { font-size:11px; color:var(--text3); }
+.sched-day-dow { font-size:14px; color:var(--text2); font-weight:600; }
+.sched-day-lunar { font-size:13px; color:var(--text3); }
 .sched-ev {
   background:var(--white); border-bottom:1px solid var(--border);
   display:flex; align-items:flex-start; gap:10px; padding:10px 16px;
 }
 .sev-bar { width:4px; min-height:36px; border-radius:2px; flex-shrink:0; margin-top:2px; }
 .sev-info { flex:1; }
-.sev-title { font-size:14px; font-weight:700; }
-.sev-meta { font-size:11px; color:var(--text2); margin-top:3px; display:flex; gap:6px; flex-wrap:wrap; }
-.badge { background:#f2f2f7; border-radius:20px; padding:1px 7px; font-size:10px; color:var(--text2); }
+.sev-title { font-size:16px; font-weight:700; }
+.sev-meta { font-size:13px; color:var(--text2); margin-top:3px; display:flex; gap:6px; flex-wrap:wrap; }
+.badge { background:#f2f2f7; border-radius:20px; padding:1px 7px; font-size:12px; color:var(--text2); }
 .sev-acts { display:flex; gap:4px; }
 .smbtn {
   width:28px; height:28px; border-radius:8px;
@@ -323,7 +323,7 @@ body {
   display:flex; align-items:center; justify-content:center;
 }
 .smbtn:active { background:var(--border); }
-.no-ev-day { padding:10px 16px 14px; background:var(--white); border-bottom:1px solid var(--border); font-size:13px; color:var(--text3); }
+.no-ev-day { padding:10px 16px 14px; background:var(--white); border-bottom:1px solid var(--border); font-size:15px; color:var(--text3); }
 
 /* ════════ SELECTED DAY PANEL ════════ */
 .day-panel {
@@ -352,7 +352,7 @@ body {
   flex:1; display:flex; flex-direction:column;
   align-items:center; justify-content:center; gap:2px;
   border:none; background:transparent; cursor:pointer;
-  color:var(--text2); font-size:10px; font-weight:600;
+  color:var(--text2); font-size:12px; font-weight:600;
   font-family:inherit; padding-top:4px;
 }
 .bn.on { color:var(--text); }
@@ -378,7 +378,7 @@ body {
 
 /* Form */
 .fg { margin-bottom:13px; }
-.fl { font-size:10.5px; font-weight:800; color:var(--text2); letter-spacing:.6px; display:block; margin-bottom:6px; text-transform:uppercase; }
+.fl { font-size:12px; font-weight:800; color:var(--text2); letter-spacing:.6px; display:block; margin-bottom:6px; text-transform:uppercase; }
 .fi,.fsel,.fta {
   width:100%; border:1.5px solid var(--border); border-radius:11px;
   background:var(--bg); font-family:inherit; font-size:14px;
@@ -560,18 +560,18 @@ body {
   font-size:12px; font-weight:700; cursor:pointer; font-family:inherit;
 }
 .dp-scroll { overflow-y:auto; flex:1; padding:0 0 24px; }
-.dp-no-ev { text-align:center; padding:32px 16px; color:var(--text3); font-size:14px; line-height:1.8; }
+.dp-no-ev { text-align:center; padding:32px 16px; color:var(--text3); font-size:16px; line-height:1.8; }
 .dp-ev-item {
   display:flex; align-items:flex-start; gap:10px;
   padding:12px 16px; border-bottom:1px solid var(--border);
 }
 .dp-ev-bar { width:4px; min-height:40px; border-radius:2px; flex-shrink:0; margin-top:2px; }
 .dp-ev-body { flex:1; min-width:0; }
-.dp-ev-title { font-size:15px; font-weight:700; display:flex; align-items:center; gap:5px; }
-.dp-ev-time { font-size:12px; color:var(--text2); margin-top:3px; }
+.dp-ev-title { font-size:17px; font-weight:700; display:flex; align-items:center; gap:5px; }
+.dp-ev-time { font-size:14px; color:var(--text2); margin-top:3px; }
 .dp-ev-badges { display:flex; gap:5px; flex-wrap:wrap; margin-top:5px; }
-.dp-badge { background:var(--bg); border-radius:20px; padding:2px 8px; font-size:10px; color:var(--text2); font-weight:600; }
-.dp-ev-note { font-size:12px; color:var(--text2); margin-top:4px; }
+.dp-badge { background:var(--bg); border-radius:20px; padding:2px 8px; font-size:12px; color:var(--text2); font-weight:600; }
+.dp-ev-note { font-size:14px; color:var(--text2); margin-top:4px; }
 .dp-ev-acts { display:flex; flex-direction:column; gap:4px; }
 .dp-btn {
   width:30px; height:30px; border-radius:8px;
@@ -837,10 +837,16 @@ body {
       <label class="fl">📌 標題</label>
       <input class="fi" id="fTitle" placeholder="事件名稱" maxlength="30">
     </div>
-    <!-- 全日勾選 -->
-    <div class="fg" style="flex-direction:row;align-items:center;gap:8px;margin-bottom:10px">
-      <input type="checkbox" id="fAllDay" style="width:18px;height:18px;accent-color:var(--text);cursor:pointer" onchange="toggleAllDay(this.checked)">
-      <label for="fAllDay" style="font-size:13px;font-weight:700;color:var(--text2);cursor:pointer">全日</label>
+    <!-- 全日勾選 + 重要 並排 -->
+    <div class="fg" style="flex-direction:row;align-items:center;gap:16px;margin-bottom:10px">
+      <div style="display:flex;align-items:center;gap:8px">
+        <input type="checkbox" id="fAllDay" style="width:18px;height:18px;accent-color:var(--text);cursor:pointer" onchange="toggleAllDay(this.checked)">
+        <label for="fAllDay" style="font-size:13px;font-weight:700;color:var(--text2);cursor:pointer">全日</label>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <input type="checkbox" id="fImportant" style="width:18px;height:18px;accent-color:#ff3b30;cursor:pointer">
+        <label for="fImportant" style="font-size:13px;font-weight:700;color:#ff3b30;cursor:pointer">🔴 重要</label>
+      </div>
     </div>
     <!-- 開始日期 / 結束日期 並排 -->
     <div class="fg row2">
@@ -1115,6 +1121,7 @@ function mkCell(ds, n, dim) {
     cur.y = d.getFullYear();
     cur.m = d.getMonth();
     renderMonth();
+    renderDayPanel();
   };
   el.ondblclick = () => {
     if (copySourceId) return; // 複製模式不開彈窗
@@ -1129,10 +1136,10 @@ function mkCell(ds, n, dim) {
     const colorVar = CAL_COLORS[e.cal] || 'var(--cal-work)';
     if (e.st) {
       // 時段性：淡背景＋彩色文字
-      return `<div class="ctag timed" style="--ctag-color:${colorVar};--ctag-bg:${colorVar}22">${e.st.slice(0,5)} ${e.title}</div>`;
+      return `<div class="ctag timed" style="--ctag-color:${colorVar};--ctag-bg:${colorVar}22">${e.important?'🔴 ':''}${e.st.slice(0,5)} ${e.title}</div>`;
     } else {
       // 全日：實心背景白字
-      return `<div class="ctag" style="background:${colorVar}">${e.title}</div>`;
+      return `<div class="ctag" style="background:${colorVar}">${e.important?'🔴 ':''}${e.title}</div>`;
     }
   }).join('');
   if (dayEvs.length > 3) tagsHtml += `<div class="ctag more">+${dayEvs.length-3}</div>`;
@@ -1271,7 +1278,7 @@ function renderWeek() {
         const w = 100 / totalCols;
         body += `<div class="week-ev" style="background:${col};top:${topPx}px;height:${heightPx}px;left:calc(${ci*w}% + 1px);width:calc(${w}% - 2px)" data-action="edit" data-id="${e.id}">
           <div style="font-size:8px;opacity:.85;line-height:1.2">${e.st}${e.en?'–'+e.en:''}</div>
-          <div style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${e.sticker?e.sticker+' ':''}${e.title}</div>
+          <div style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${e.important?'🔴 ':''}${e.sticker?e.sticker+' ':''}${e.title}</div>
         </div>`;
       });
     });
@@ -1364,7 +1371,7 @@ function renderList() {
     html += `<div class="sched-ev">
       <div class="sev-bar" style="background:${col}"></div>
       <div class="sev-info">
-        <div class="sev-title">${e.sticker?e.sticker+' ':''}${e.title}</div>
+        <div class="sev-title">${e.important?'🔴 ':''}${e.sticker?e.sticker+' ':''}${e.title}</div>
         <div class="sev-meta">
           <span class="badge">${timeStr}</span>
           <span class="badge">${CAL_NAMES[e.cal]||''}</span>
@@ -1446,6 +1453,7 @@ function openModal(id = null) {
     document.getElementById('fNote').value = e.note || '';
     setCalType(e.cal);
     setSticker(e.sticker || '');
+    document.getElementById('fImportant').checked = !!e.important;
     const isAllDay = !e.st;
     document.getElementById('fAllDay').checked = isAllDay;
     toggleAllDay(isAllDay);
@@ -1464,6 +1472,7 @@ function openModal(id = null) {
     toggleAllDay(false);
     setCalType('work');
     setSticker('');
+    document.getElementById('fImportant').checked = false;
   }
   document.getElementById('overlay').classList.add('open');
 }
@@ -1642,7 +1651,8 @@ function saveEvent() {
     rep: document.getElementById('fRepeat').value,
     rm: document.getElementById('fRemind').value,
     note: document.getElementById('fNote').value.trim(),
-    sticker: selSticker
+    sticker: selSticker,
+    important: document.getElementById('fImportant').checked
   };
 
   if (editId) { const i = evs.findIndex(x => x.id === editId); evs[i] = ev; toast('✅ 已更新！'); }
@@ -1935,7 +1945,7 @@ function renderDayPopupContent(ds) {
     return `<div class="dp-ev-item" data-id="${e.id}">
       <div class="dp-ev-bar" style="background:${col}"></div>
       <div class="dp-ev-body">
-        <div class="dp-ev-title">${e.sticker ? e.sticker + ' ' : ''}${e.title}</div>
+        <div class="dp-ev-title">${e.important ? '🔴 ' : ''}${e.sticker ? e.sticker + ' ' : ''}${e.title}</div>
         <div class="dp-ev-time">🕐 ${timeStr}</div>
         ${e.note ? `<div class="dp-ev-note">📝 ${e.note}</div>` : ''}
         <div class="dp-ev-badges">${badges}</div>
