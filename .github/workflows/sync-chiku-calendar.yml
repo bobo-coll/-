@@ -1,0 +1,33 @@
+name: 同步 index.html 到 chiku-calendar
+
+on:
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 取得目前儲存庫程式碼
+        uses: actions/checkout@v4
+
+      - name: 推送最新 index.html 到 chiku-calendar
+        env:
+          GH_TOKEN: ${{ secrets.CHIKU_CALENDAR_PAT }}
+        run: |
+          git config --global user.email "readbobo324@gmail.com"
+          git config --global user.name "bobo-coll"
+
+          # clone chiku-calendar repo
+          git clone "https://x-access-token:${GH_TOKEN}@github.com/bobo-coll/chiku-calendar.git" /tmp/chiku-calendar
+
+          # 覆蓋 index.html
+          cp index.html /tmp/chiku-calendar/index.html
+
+          cd /tmp/chiku-calendar
+          git add index.html
+          git commit -m "sync: 移除🔴重要功能，更新 index.html" || echo "沒有變更需要提交"
+          git push origin main
+
+          echo "✓ 已同步完成"
+          echo "網址：https://bobo-coll.github.io/chiku-calendar/"
