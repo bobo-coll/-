@@ -1,0 +1,40 @@
+name: 建立下載版本
+
+on:
+  push:
+    branches: ["claude/setup-chiku-calendar-repo-sCeEv"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 刪除舊版 Release（若存在）
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release delete beta1 --yes 2>/dev/null || true
+          git push origin --delete refs/tags/beta1 2>/dev/null || true
+
+      - name: 建立新 Release 並上傳檔案
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create beta1 \
+            --title "築夢點滴 beta.1" \
+            --notes "## 築夢點滴 beta.1 升級包
+
+          ### 下載說明
+          1. 點下方 **築夢點滴-升級包-beta.1.html** 下載升級程式
+          2. 點開下載的檔案 → 自動偵測舊版資料 → 點「升級」
+          3. 下載含資料的 beta.1 正式版
+
+          ### 直接下載 beta.1（不含升級流程）
+          點下方 **index.html** 下載正式版（需手動匯入資料）" \
+            "築夢點滴-升級包-beta.1.html" \
+            "updater.html" \
+            "index.html"
