@@ -837,15 +837,10 @@ body {
       <label class="fl">📌 標題</label>
       <input class="fi" id="fTitle" placeholder="事件名稱" maxlength="30">
     </div>
-    <!-- 全日勾選 + 重要 並排 -->
     <div class="fg" style="flex-direction:row;align-items:center;gap:16px;margin-bottom:10px">
       <div style="display:flex;align-items:center;gap:8px">
         <input type="checkbox" id="fAllDay" style="width:18px;height:18px;accent-color:var(--text);cursor:pointer" onchange="toggleAllDay(this.checked)">
         <label for="fAllDay" style="font-size:13px;font-weight:700;color:var(--text2);cursor:pointer">全日</label>
-      </div>
-      <div style="display:flex;align-items:center;gap:8px">
-        <input type="checkbox" id="fImportant" style="width:18px;height:18px;accent-color:#ff3b30;cursor:pointer">
-        <label for="fImportant" style="font-size:13px;font-weight:700;color:#ff3b30;cursor:pointer">🔴 重要</label>
       </div>
     </div>
     <!-- 開始日期 / 結束日期 並排 -->
@@ -1136,10 +1131,10 @@ function mkCell(ds, n, dim) {
     const colorVar = CAL_COLORS[e.cal] || 'var(--cal-work)';
     if (e.st) {
       // 時段性：淡背景＋彩色文字
-      return `<div class="ctag timed" style="--ctag-color:${colorVar};--ctag-bg:${colorVar}22">${e.important?'🔴 ':''}${e.st.slice(0,5)} ${e.title}</div>`;
+      return `<div class="ctag timed" style="--ctag-color:${colorVar};--ctag-bg:${colorVar}22">${e.st.slice(0,5)} ${e.title}</div>`;
     } else {
       // 全日：實心背景白字
-      return `<div class="ctag" style="background:${colorVar}">${e.important?'🔴 ':''}${e.title}</div>`;
+      return `<div class="ctag" style="background:${colorVar}">${e.title}</div>`;
     }
   }).join('');
   if (dayEvs.length > 3) tagsHtml += `<div class="ctag more">+${dayEvs.length-3}</div>`;
@@ -1278,7 +1273,7 @@ function renderWeek() {
         const w = 100 / totalCols;
         body += `<div class="week-ev" style="background:${col};top:${topPx}px;height:${heightPx}px;left:calc(${ci*w}% + 1px);width:calc(${w}% - 2px)" data-action="edit" data-id="${e.id}">
           <div style="font-size:8px;opacity:.85;line-height:1.2">${e.st}${e.en?'–'+e.en:''}</div>
-          <div style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${e.important?'🔴 ':''}${e.sticker?e.sticker+' ':''}${e.title}</div>
+          <div style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${e.sticker?e.sticker+' ':''}${e.title}</div>
         </div>`;
       });
     });
@@ -1371,7 +1366,7 @@ function renderList() {
     html += `<div class="sched-ev">
       <div class="sev-bar" style="background:${col}"></div>
       <div class="sev-info">
-        <div class="sev-title">${e.important?'🔴 ':''}${e.sticker?e.sticker+' ':''}${e.title}</div>
+        <div class="sev-title">${e.sticker?e.sticker+' ':''}${e.title}</div>
         <div class="sev-meta">
           <span class="badge">${timeStr}</span>
           <span class="badge">${CAL_NAMES[e.cal]||''}</span>
@@ -1453,7 +1448,6 @@ function openModal(id = null) {
     document.getElementById('fNote').value = e.note || '';
     setCalType(e.cal);
     setSticker(e.sticker || '');
-    document.getElementById('fImportant').checked = !!e.important;
     const isAllDay = !e.st;
     document.getElementById('fAllDay').checked = isAllDay;
     toggleAllDay(isAllDay);
@@ -1472,7 +1466,6 @@ function openModal(id = null) {
     toggleAllDay(false);
     setCalType('work');
     setSticker('');
-    document.getElementById('fImportant').checked = false;
   }
   document.getElementById('overlay').classList.add('open');
 }
@@ -1651,8 +1644,7 @@ function saveEvent() {
     rep: document.getElementById('fRepeat').value,
     rm: document.getElementById('fRemind').value,
     note: document.getElementById('fNote').value.trim(),
-    sticker: selSticker,
-    important: document.getElementById('fImportant').checked
+    sticker: selSticker
   };
 
   if (editId) { const i = evs.findIndex(x => x.id === editId); evs[i] = ev; toast('✅ 已更新！'); }
@@ -1945,7 +1937,7 @@ function renderDayPopupContent(ds) {
     return `<div class="dp-ev-item" data-id="${e.id}">
       <div class="dp-ev-bar" style="background:${col}"></div>
       <div class="dp-ev-body">
-        <div class="dp-ev-title">${e.important ? '🔴 ' : ''}${e.sticker ? e.sticker + ' ' : ''}${e.title}</div>
+        <div class="dp-ev-title">${e.sticker ? e.sticker + ' ' : ''}${e.title}</div>
         <div class="dp-ev-time">🕐 ${timeStr}</div>
         ${e.note ? `<div class="dp-ev-note">📝 ${e.note}</div>` : ''}
         <div class="dp-ev-badges">${badges}</div>
