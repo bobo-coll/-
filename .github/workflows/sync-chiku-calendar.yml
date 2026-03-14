@@ -1,7 +1,11 @@
 name: 同步 index.html 到 chiku-calendar
 
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - claude/setup-chiku-calendar-repo-sCeEv
+    paths:
+      - index.html
 
 jobs:
   sync:
